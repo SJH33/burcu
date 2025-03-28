@@ -236,3 +236,37 @@ footer {
   color: #fffaf5;
 }
 
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-filters button {
+  flex: 1 1 auto;
+  min-width: 100px;
+  max-width: 200px;
+  background-color: #f7e8d5;
+  color: #444;
+  border: 2px solid #d06224;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.gallery-filters button:hover {
+  background-color: #f3d6c1;
+}
+
+.gallery-filters button.active {
+  background-color: #d06224;
+  color: #fffaf5;
+}
+
