@@ -276,13 +276,15 @@ nav ul li.social-link {
   vertical-align: middle;
 }
 
+
+
+nav ul li.social-link img:hover {
+  opacity: 0.7;
+}
+
 nav ul li.social-link img {
   width: 28px;
   height: 28px;
   vertical-align: middle;
   transition: opacity 0.3s;
-}
-
-nav ul li.social-link img:hover {
-  opacity: 0.7;
 }
