@@ -309,3 +309,28 @@ nav ul li.social-link img {
 .floating-instagram:hover {
   transform: scale(1.1);
 }
+
+nav {
+  background-color: #fff; /* or any background color you like */
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* center items horizontally */
+  align-items: center;
+  gap: 15px; /* space between items */
+  margin: 0;
+  padding: 0;
+}
+
+nav li a img {
+  height: 40px; /* adjust this to make the images smaller or larger */
+  width: auto;
+  display: block;
+}
+
+.social-link img {
+  height: 30px; /* slightly smaller icon if you want */
+}
