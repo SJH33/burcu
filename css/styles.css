@@ -231,3 +231,8 @@ footer {
   transform: scale(1.02);
 }
 
+.gallery-filters button.active {
+  background-color: #d06224;
+  color: #fffaf5;
+}
+
