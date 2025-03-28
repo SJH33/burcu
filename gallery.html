@@ -24,17 +24,25 @@
   <main>
     <section class="gallery-section">
       <h1>Gallery</h1>
+
+      <div class="gallery-filters">
+        <button data-filter="all">All</button>
+        <button data-filter="animals">Animals</button>
+        <button data-filter="portraits">Portraits</button>
+        <button data-filter="fantasy">Fantasy</button>
+      </div>
+
       <div class="gallery-grid">
-        <div class="gallery-item">
+        <div class="gallery-item" data-category="animals">
           <img src="images/art-placeholder1.jpg" alt="Artwork 1" />
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-category="portraits">
           <img src="images/art-placeholder2.jpg" alt="Artwork 2" />
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-category="fantasy">
           <img src="images/art-placeholder3.jpg" alt="Artwork 3" />
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-category="animals">
           <img src="images/art-placeholder4.jpg" alt="Artwork 4" />
         </div>
         <!-- Add more artwork blocks as needed -->
@@ -45,5 +53,7 @@
   <footer>
     <p>© 2025 Your Artist Name. All rights reserved.</p>
   </footer>
+
+  <script src="js/gallery-filter.js"></script>
 </body>
 </html>
