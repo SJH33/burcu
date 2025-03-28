@@ -1,3 +1,5 @@
+/*For Index.html*/
+
 /* Fonts and base styling */
 body {
   margin: 0;
@@ -81,4 +83,44 @@ footer {
   background-color: #f3d6c1;
   font-size: 0.9rem;
   color: #666;
+}
+
+/*For about.html*/
+/* About Page Styles */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 3rem 2rem;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-image {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border: 5px solid #e0c7b7;
+  border-radius: 10px;
+}
+
+.about-text {
+  flex: 2 1 400px;
+}
+
+.about-text h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #d06224;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
