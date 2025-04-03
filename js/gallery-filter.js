@@ -5,9 +5,12 @@ function setupFilters() {
     button.addEventListener("click", () => {
       const filter = button.getAttribute("data-filter");
 
-      // Important: query art pieces at the time of filtering (not just once on load)
-      const items = document.querySelectorAll(".art-piece");
+      // ✅ Update active class
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
 
+      // ✅ Filter logic
+      const items = document.querySelectorAll(".art-piece");
       items.forEach((item) => {
         const category = item.getAttribute("data-category");
         if (filter === "all" || category === filter) {
@@ -20,5 +23,5 @@ function setupFilters() {
   });
 }
 
-// Make the function accessible from other scripts
+// Make it available globally
 window.setupFilters = setupFilters;
