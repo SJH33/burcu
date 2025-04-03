@@ -49,4 +49,5 @@ function parseFrontMatter(mdContent) {
   return frontmatter;
 }
 
-fetchGalleryItems();
+fetchGalleryItems().then(setupFilters);
+
