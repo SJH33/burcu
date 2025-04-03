@@ -1,5 +1,6 @@
 async function fetchGalleryItems() {
   const galleryGrid = document.querySelector(".gallery-grid");
+
   const files = [
     "gallery/portrait-placeholder.md",
     "gallery/flower-placeholder.md",
@@ -7,27 +8,28 @@ async function fetchGalleryItems() {
     "gallery/animal-placeholder.md"
   ];
 
-  
-
   for (const file of files) {
-    const response = await fetch(`/gallery/${file}`);
-    const text = await response.text();
-    const frontmatter = parseFrontMatter(text);
+    try {
+      const response = await fetch(file);
+      const text = await response.text();
+      const frontmatter = parseFrontMatter(text);
 
-    const artDiv = document.createElement("div");
-    artDiv.classList.add("art-piece");
-    artDiv.dataset.category = frontmatter.category;
+      const artDiv = document.createElement("div");
+      artDiv.classList.add("art-piece");
+      artDiv.dataset.category = frontmatter.category;
 
-    const img = document.createElement("img");
-    img.src = frontmatter.image;
-    img.alt = frontmatter.alt || frontmatter.title;
+      const img = document.createElement("img");
+      img.src = frontmatter.image;
+      img.alt = frontmatter.alt || frontmatter.title;
 
-    artDiv.appendChild(img);
-    galleryGrid.appendChild(artDiv);
+      artDiv.appendChild(img);
+      galleryGrid.appendChild(artDiv);
+    } catch (err) {
+      console.error(`Failed to load ${file}`, err);
+    }
   }
 }
 
-// Very simple YAML frontmatter parser
 function parseFrontMatter(mdContent) {
   const lines = mdContent.split("\n");
   const frontmatter = {};
