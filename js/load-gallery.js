@@ -1,12 +1,13 @@
 async function fetchGalleryItems() {
   const galleryGrid = document.querySelector(".gallery-grid");
-
   const files = [
-    "portrait-placeholder.md",
-    "flower-placeholder.md",
-    "scenery-placeholder.md",
-    "animal-placeholder.md"
+    "gallery/portrait-placeholder.md",
+    "gallery/flower-placeholder.md",
+    "gallery/scenery-placeholder.md",
+    "gallery/animal-placeholder.md"
   ];
+
+  
 
   for (const file of files) {
     const response = await fetch(`/gallery/${file}`);
