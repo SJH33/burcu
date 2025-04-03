@@ -1,12 +1,12 @@
-
-document.addEventListener("DOMContentLoaded", () => {
+function setupFilters() {
   const buttons = document.querySelectorAll(".gallery-filters button");
-  const items = document.querySelectorAll(".art-piece");
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const filter = button.getAttribute("data-filter");
-      
+
+      // Important: query art pieces at the time of filtering (not just once on load)
+      const items = document.querySelectorAll(".art-piece");
 
       items.forEach((item) => {
         const category = item.getAttribute("data-category");
@@ -15,33 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           item.style.display = "none";
         }
-
-      });
-
-      // Optional: highlight selected button
-      buttons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
-    });
-  });
-});
-
-function setupFilters() {
-  const filterButtons = document.querySelectorAll(".gallery-filters button");
-
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const filter = button.dataset.filter;
-
-      document.querySelectorAll(".art-piece").forEach((art) => {
-        if (filter === "all" || art.dataset.category === filter) {
-          art.style.display = "block";
-        } else {
-          art.style.display = "none";
-        }
       });
     });
   });
 }
 
-// Allow other scripts to call setupFilters
+// Make the function accessible from other scripts
 window.setupFilters = setupFilters;
