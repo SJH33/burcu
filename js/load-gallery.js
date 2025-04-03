@@ -49,5 +49,11 @@ function parseFrontMatter(mdContent) {
   return frontmatter;
 }
 
-fetchGalleryItems().then(setupFilters);
+
+
+fetchGalleryItems().then(() => {
+  if (typeof window.setupFilters === "function") {
+    window.setupFilters();
+  }
+});
 
