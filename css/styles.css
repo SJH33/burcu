@@ -347,3 +347,50 @@ nav li a img {
   color: white;
   border: 1px solid #333;
 }
+
+/* For Shop.html Page */
+.shop-section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.shop-section p {
+  margin-bottom: 2rem;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.shop-item {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.shop-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.shop-item h3 {
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.shop-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
