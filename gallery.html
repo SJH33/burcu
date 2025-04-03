@@ -25,9 +25,15 @@
 
   <div data-include="partials/footer.html"></div>
   
+  <!-- 1. Include.js loads your header/footer/nav (if needed before DOM) -->
   <script src="js/include.js"></script>
-  <script src="js/gallery-filter.js"></script>
+  
+  <!-- 2. load-gallery.js dynamically inserts art pieces into the DOM -->
   <script src="js/load-gallery.js"></script>
+  
+  <!-- 3. gallery-filter.js adds filter behavior AFTER items are in the DOM -->
+  <script src="js/gallery-filter.js"></script>
+
 
 </body>
 
