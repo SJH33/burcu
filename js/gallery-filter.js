@@ -24,3 +24,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function setupFilters() {
+  const filterButtons = document.querySelectorAll(".gallery-filters button");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+
+      document.querySelectorAll(".art-piece").forEach((art) => {
+        if (filter === "all" || art.dataset.category === filter) {
+          art.style.display = "block";
+        } else {
+          art.style.display = "none";
+        }
+      });
+    });
+  });
+}
+
+// Allow other scripts to call setupFilters
+window.setupFilters = setupFilters;
