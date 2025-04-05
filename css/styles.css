@@ -438,15 +438,21 @@ body.landing-page, html {
   flex-direction: column;
 }
 
+
+
 .landing-image {
-  width: auto;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   
+  height: 100vh; /* Fill full height */
+  width: auto;
+  object-fit: contain;
+
   animation: pulseGlow 3s ease-in-out infinite;
 }
+
 
 /* Speech Bubble Position */
 .speech-bubble-link {
