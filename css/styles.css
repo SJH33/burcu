@@ -461,13 +461,33 @@ body.landing-page, html {
   animation: fadeInBubble 2s ease 1.5s forwards, float 3s ease-in-out infinite 3.5s;
 }
 
+@media (max-width: 768px) {
+  .speech-bubble-link {
+    top: 18%;  /* 🛠 Move a little if needed */
+    left: 50%; /* 🛠 Adjust left to stay near bird */
+  }
+}
+
+@media (max-width: 480px) {
+  .speech-bubble-link {
+    top: 17%; 
+    left: 48%;
+  }
+}
+
+
 .speech-bubble-link img {
   width: 80px;
   height: auto;
   display: block;
 }
 
-***
+@media (max-width: 768px) {
+  .speech-bubble-link img {
+    width: 50px; /* 📱 Smaller on tablets/phones */
+  }
+}
+
 
 
 
