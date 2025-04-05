@@ -441,9 +441,9 @@ body, html {
 /* Position the speech bubble */
 .speech-bubble-link {
   position: absolute;
-  top: 10%;   /* Adjust this value to position near the bird */
-  left: 65%;  /* Adjust this value to move it left/right */
-  width: 100px;
+  top: 18%;   /* 🛠 Move up or down */
+  left: 54%;  /* 🛠 Move left or right */
+  width: 80px; /* Size of speech bubble */
   height: auto;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -452,4 +452,5 @@ body, html {
 .speech-bubble-link:hover {
   transform: scale(1.1);
 }
+
 
