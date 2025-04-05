@@ -439,9 +439,10 @@ body, html {
   margin: 0 auto;
   padding-top: 5vh;
   
-  /* ✨ Soft glowing edge */
-  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.7));
+  /* ✨ Add pulsing glow animation */
+  animation: pulseGlow 3s ease-in-out infinite;
 }
+
 
 
 
