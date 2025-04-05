@@ -8,6 +8,9 @@
   </head>
 
 
+
+
+
   <body class="landing-page">
     <div class="landing-wrapper">
       <div class="image-container">
@@ -31,8 +34,8 @@
         const imgRect = img.getBoundingClientRect();
     
         // Set bubble relative to the image
-        bubble.style.top = (imgRect.top + imgRect.height * 0.2) + 'px'; // 20% down from the top of the image
-        bubble.style.left = (imgRect.left + imgRect.width * 0.55) + 'px'; // 55% across from the left of the image
+        bubble.style.top = (imgRect.top + imgRect.height * 0.09) + 'px'; // 9% from top
+        bubble.style.left = (imgRect.left + imgRect.width * 0.53) + 'px'; // 53% from left
       }
     
       window.addEventListener('load', positionSpeechBubble);
