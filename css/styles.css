@@ -431,13 +431,15 @@ body, html {
   overflow: hidden;
 }
 .landing-image {
-  max-width: 90vw; /* Max width relative to screen size */
-  max-height: 90vh; /* Max height relative to screen size */
+  max-width: 90vw;
+  max-height: 90vh;
   object-fit: contain;
   display: block;
-  margin: 0 auto; /* Center horizontally */
-  padding-top: 5vh; /* Optional: push a little down from top */
+  margin: 0 auto;
+  padding-top: 5vh;
+  filter: drop-shadow(0 0 30px rgba(228, 232, 236, 0.6));
 }
+
 
 
 
