@@ -499,3 +499,9 @@ main {
   }
 }
 
+.gallery-filters button.active {
+  background-color: #d06224;
+  color: #fffaf5;
+  border: 1px solid #d06224;
+}
+
