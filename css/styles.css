@@ -1,482 +1,58 @@
-/*For Index.html*/
-
-/* Fonts and base styling */
-body {
+/* Base Styles */
+body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
   font-family: 'Quicksand', sans-serif;
-  background-color: #fffaf5;
+  background-color: #42745B; /* 🌿 Updated background */
   color: #333;
 }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 2rem;
-  background-color: #f7e8d5;
-}
-
-.logo {
-  max-width: 300px;
-  width: 100%;
-}
-
-/* Navigation */
-nav {
-  background-color: #f3d6c1;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin: 0 1.5rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: #444;
-  font-weight: bold;
-  font-family: 'Amatic SC', cursive;
-  font-size: 1.5rem;
-  transition: color 0.2s;
-}
-
-nav a:hover {
-  color: #d06224;
-}
-
-/* Gallery Section */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-/* Force square shape using padding trick */
-.art-piece {
-  position: relative;
-  width: 100%;
-  padding-top: 100%; /* 1:1 ratio */
-  overflow: hidden;
-  border: 4px solid #e0c7b7;
-  background-color: #fff;
-}
-
-/* Fit image inside square */
-.art-piece img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-
-.art-piece:hover {
-  transform: scale(1.02);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #f3d6c1;
-  font-size: 0.9rem;
-  color: #666;
-}
-.social-link img {
-  width: 24px;
-  height: 24px;
-  margin-left: 8px;
-  vertical-align: middle;
-}
-
-
-/*For about.html*/
-/* About Page Styles */
-.about-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  padding: 3rem 2rem;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.about-image {
-  flex: 1 1 250px;
-  text-align: center;
-}
-
-.about-image img {
-  max-width: 100%;
-  border: 5px solid #e0c7b7;
-  border-radius: 10px;
-}
-
-.about-text {
-  flex: 2 1 400px;
-}
-
-.about-text h1 {
-  font-family: 'Amatic SC', cursive;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #d06224;
-}
-
-.about-text p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-/* Contact Page Styles */
-
-/* Make full page height structure */
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
-
-/* Contact Page Styles */
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
-
-.contact-section {
-  max-width: 600px;
-  margin: 3rem auto;
-  padding: 1rem;
-  text-align: center;
-}
-
-.contact-section p {
-  line-height: 1.6;
-  color: #444;
-}
-
-.contact-links p {
-  font-size: 1.1rem;
-  margin: 1rem 0;
-}
-
-.contact-links a {
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.contact-links a:hover {
-  text-decoration: underline;
-}
-
-
-
-
-/* Gallery Page Styles */
-.gallery-section {
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 0 2rem;
-}
-
-.gallery-section h1 {
-  font-family: 'Amatic SC', cursive;
-  font-size: 2.5rem;
-  color: #d06224;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-
-
-.gallery-item {
-  border: 4px solid #e0c7b7;
-  padding: 0.5rem;
-  background-color: #fff;
-  transition: transform 0.3s ease;
-}
-
-.gallery-item img {
-  width: 100%;
-  display: block;
-}
-
-.gallery-item:hover {
-  transform: scale(1.02);
-}
-
-.gallery-filters button.active {
-  background-color: #d06224;
-  color: #fffaf5;
-}
-
-.gallery-filters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  margin-bottom: 2rem;
-}
-
-.gallery-filters button {
-  flex: 1 1 auto;
-  min-width: 100px;
-  max-width: 200px;
-  background-color: #f7e8d5;
-  color: #444;
-  border: 2px solid #d06224;
-  font-family: 'Amatic SC', cursive;
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.gallery-filters button:hover {
-  background-color: #f3d6c1;
-}
-
-.gallery-filters button.active {
-  background-color: #d06224;
-  color: #fffaf5;
-}
-
-nav ul li.social-link {
-  display: inline-block;
-  margin-left: 1.5rem;
-  vertical-align: middle;
-}
-
-
-
-nav ul li.social-link img:hover {
-  opacity: 0.7;
-}
-
-nav ul li.social-link img {
-  width: 28px;
-  height: 28px;
-  vertical-align: middle;
-  transition: opacity 0.3s;
-}
-
-.floating-instagram {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  background-color: transparent;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-.floating-instagram img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.floating-instagram:hover {
-  transform: scale(1.1);
-}
-
-nav {
-  background-color: #fff; /* or any background color you like */
-  padding: 10px 20px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center; /* center items horizontally */
-  align-items: center;
-  gap: 15px; /* space between items */
-  margin: 0;
-  padding: 0;
-}
-
-nav li a img {
-  height: 40px; /* adjust this to make the images smaller or larger */
-  width: auto;
-  display: block;
-}
-
-.social-link img {
-  height: 30px; /* slightly smaller icon if you want */
-}
-
-.gallery-filters button.active {
-  background-color: #333;
-  color: white;
-  border: 1px solid #333;
-}
-
-/* For Shop.html Page */
-.shop-section {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 1rem;
-  text-align: center;
-}
-
-.shop-section p {
-  margin-bottom: 2rem;
-  color: #444;
-  font-size: 1.1rem;
-}
-
-.shop-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-}
-
-.shop-item {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: #fff;
-  transition: transform 0.2s ease;
-}
-
-.shop-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.shop-item h3 {
-  padding: 0.75rem;
-  font-size: 1rem;
-  color: #333;
-}
-
-.shop-item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.shop-item .image-wrapper {
-  width: 100%;
-  aspect-ratio: 1 / 1; /* Makes it a square — change to 4 / 3 if you prefer */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.shop-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-
-
-
-body.landing-page, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: #d4e8d6; /* Soft background color */
+/* Landing Page Specific */
+body.landing-page {
+  background-color: #42745B;
 }
 
 .landing-wrapper {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full screen height */
+  height: 100vh;
   overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Push everything to the bottom */
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-
+.image-container {
+  position: relative;
+  width: auto;
+  height: 90vh;
+}
 
 .landing-image {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  
-  height: 90vh; 
   width: auto;
+  height: 90vh;
   object-fit: contain;
-  /* ✨ Big, visible glow around the edges */
   filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.9));
-
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-
-
-
-
-
-
-
-/* Speech Bubble Position */
+/* Speech Bubble */
 .speech-bubble-link {
   position: absolute;
-  top: 10%
+  top: 10%;
   left: 20%;
   width: 6vw;
   height: auto;
   cursor: pointer;
-  
   opacity: 0;
   animation: fadeInBubble 2s ease 1.5s forwards, float 3s ease-in-out infinite 3.5s;
 }
-
-
-
 
 .speech-bubble-link img {
   width: 100%;
@@ -484,17 +60,67 @@ body.landing-page, html {
   display: block;
 }
 
+.speech-bubble-link:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Bubble Resize */
 @media (max-width: 768px) {
   .speech-bubble-link img {
-    width: 50px; /* 📱 Smaller on tablets/phones */
+    width: 50px;
   }
 }
 
+/* Sparkles */
+.sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: 
+    radial-gradient(white 2px, transparent 3px),
+    radial-gradient(white 1.5px, transparent 3px),
+    radial-gradient(white 1px, transparent 3px),
+    radial-gradient(white 2px, transparent 3px);
+  background-size: 100px 100px, 150px 150px, 80px 80px, 120px 120px;
+  background-repeat: repeat;
+  animation: moveSparkles 30s linear infinite;
+}
 
+/* Flowers */
+.flower {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  pointer-events: none;
+}
 
+.top-left {
+  top: 20px;
+  left: 20px;
+}
 
+.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
 
-/* Fade in and pop */
+/* Flower Responsive */
+@media (max-width: 768px) {
+  .flower {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flower {
+    width: 150px;
+  }
+}
+
+/* Animations */
 @keyframes fadeInBubble {
   0% {
     opacity: 0;
@@ -503,24 +129,6 @@ body.landing-page, html {
   100% {
     opacity: 1;
     transform: scale(1);
-  }
-}
-
-
-.speech-bubble-link:hover {
-  transform: scale(1.1);
-}
-
-/* Make entire landing page fade in */
-.page-wrapper {
-  animation: fadeIn 2s ease forwards;
-  opacity: 0; /* Start invisible */
-}
-
-/* Define the fadeIn keyframes */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
   }
 }
 
@@ -536,12 +144,6 @@ body.landing-page, html {
   }
 }
 
-body.landing-page {
-  background-color: #42745B;  
-}
-
-
-
 @keyframes pulseGlow {
   0% {
     filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
@@ -554,56 +156,6 @@ body.landing-page {
   }
 }
 
-
-
- /* Position the flowers */
-.flower {
-  position: absolute;
-  width: 300px;  /* 🎯 adjust size as needed */
-  height: auto;
-  pointer-events: none; /* Don't block clicks on speech bubble */
-}
-
-.top-left {
-  top: 20px;    /* Distance from top */
-  left: 20px;   /* Distance from left */
-}
-
-.bottom-right {
-  bottom: 20px; /* Distance from bottom */
-  right: 20px;  /* Distance from right */
-}
-
-
-@media (max-width: 768px) {
-  .flower {
-    width: 200px; /* smaller flowers on tablets */
-  }
-}
-
-@media (max-width: 480px) {
-  .flower {
-    width: 150px; /* smaller flowers on phones */
-  }
-}
-
-.sparkles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Don't block clicks */
-  background: 
-    radial-gradient(white 2px, transparent 3px),
-    radial-gradient(white 1.5px, transparent 3px),
-    radial-gradient(white 1px, transparent 3px),
-    radial-gradient(white 2px, transparent 3px);
-  background-size: 100px 100px, 150px 150px, 80px 80px, 120px 120px;
-  background-repeat: repeat;
-  animation: moveSparkles 30s linear infinite;
-}
-
 @keyframes moveSparkles {
   0% {
     background-position: 0 0, 0 0, 0 0, 0 0;
@@ -613,3 +165,14 @@ body.landing-page {
   }
 }
 
+/* Make full page fade-in */
+.page-wrapper {
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
