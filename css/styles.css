@@ -327,39 +327,37 @@ main {
 
 /* Carousel Section */
 .carousel-container {
-  overflow: hidden; /* Hide anything outside the box */
+  overflow: hidden;
   width: 100%;
-  background-color: #fff; /* or any background you like */
+  background-color: #fff;
   padding: 2rem 0;
 }
 
 .carousel-track {
   display: flex;
-  width: calc(250px * 16); /* 8 images * 2 (for looping effect) */
-  animation: scroll 40s linear infinite; /* 👈 control speed here */
+  width: calc(250px * 16); /* 8 original + 8 duplicated = 16 total */
+  animation: scroll 40s linear infinite;
 }
 
 .carousel-track img {
-  width: 250px; /* 📱 Phone screen size */
+  width: 250px;
   height: 500px;
   object-fit: cover;
-  margin-right: 2rem; /* Space between images */
-  border-radius: 20px; /* Soft corners */
+  margin-right: 2rem;
+  border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Keyframes for smooth scroll */
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Move left by half the total width */
+    transform: translateX(-50%); /* Move half way to loop perfectly */
   }
 }
 
-/* Pause the carousel when hovering */
+/* Pause on hover */
 .carousel-track:hover {
   animation-play-state: paused;
 }
-
