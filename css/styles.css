@@ -513,3 +513,17 @@ body, html {
 body.landing-page {
   background-color: #42745B;  
 }
+
+
+
+@keyframes pulseGlow {
+  0% {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.9));
+  }
+  100% {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+  }
+}
