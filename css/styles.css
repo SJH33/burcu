@@ -253,12 +253,19 @@ img {
 
 /* 🎯 Filter Buttons */
 .gallery-filters {
+  position: sticky;
+  top: 80px; /* adjust depending on your navbar height */
+  background-color: #fffaf5; /* match your page background */
+  z-index: 10;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+  padding: 1rem;
   margin-bottom: 2rem;
+  border-bottom: 2px solid #eee;
 }
+
 
 .gallery-filters button {
   background-color: #f7e8d5;
