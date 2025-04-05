@@ -316,11 +316,10 @@ img {
 .art-piece {
   position: relative;
   width: 100%;
-  padding-top: 150%; /* Vertical rectangle */
-  background-color: #fff;
-  border: 4px solid #e0c7b7;
-  border-radius: 12px;
+  padding-top: 150%; /* 🎯 Makes it taller than wide (vertical phone shape) */
   overflow: hidden;
+  border: 4px solid #e0c7b7;
+  background-color: #fff;
   transition: transform 0.3s ease;
 }
 
@@ -330,9 +329,9 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
+  object-fit: cover; /* 🎯 fills frame nicely */
 }
+
 
 
 
