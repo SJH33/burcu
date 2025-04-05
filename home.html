@@ -45,12 +45,19 @@
   <script>
   document.addEventListener('DOMContentLoaded', function () {
     const carouselWrapper = document.querySelector('.carousel-wrapper');
+    const carouselTrack = document.querySelector('.carousel-track');
     const leftButton = document.querySelector('.carousel-button.left');
     const rightButton = document.querySelector('.carousel-button.right');
 
     function startAutoScroll() {
       return setInterval(() => {
         carouselWrapper.scrollBy({ left: 1, behavior: 'auto' });
+
+        // 🛠 Check if we reached the end
+        if (carouselWrapper.scrollLeft >= (carouselTrack.scrollWidth - carouselWrapper.clientWidth)) {
+          // Reset to beginning
+          carouselWrapper.scrollLeft = 0;
+        }
       }, 30);
     }
 
@@ -72,11 +79,11 @@
       carouselWrapper.scrollBy({ left: 300, behavior: 'smooth' });
     });
 
-    // Pause when hovering over the carousel area
+    // Pause when hovering over the carousel
     carouselWrapper.addEventListener('mouseover', pauseScroll);
     carouselWrapper.addEventListener('mouseout', resumeScroll);
 
-    // Pause when hovering over the buttons too!
+    // Pause when hovering over buttons too
     leftButton.addEventListener('mouseover', pauseScroll);
     leftButton.addEventListener('mouseout', resumeScroll);
 
@@ -84,5 +91,6 @@
     rightButton.addEventListener('mouseout', resumeScroll);
   });
 </script>
+
 
 </body>
