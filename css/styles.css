@@ -342,9 +342,9 @@ main {
 
 .carousel-track {
   display: flex;
-  width: max-content; /* 👈 allow track to be wide automatically */
-  animation: scroll 40s linear infinite;
+  width: max-content; /* 👈 images spread wide */
 }
+
 
 .carousel-track img {
   width: 200px;
