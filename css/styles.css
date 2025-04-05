@@ -30,60 +30,40 @@ body.landing-page {
 /* Landing Image */
 .landing-image {
   position: absolute;
-  bottom: 0; /* 👈 Attach to bottom */
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: auto;
-  height: 80vh; /* 👈 Full screen height */
+  height: 80vh;
   object-fit: contain;
   display: block;
   margin: 0;
   padding: 0;
-  filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.9)); /* ✨ Glow */
+  filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.9));
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-
+/* Speech Bubble */
 .speech-bubble-link {
   position: absolute;
   top: 5%;
   left: 25%;
-  width: 6vw;
+  width: 100px; /* Fixed width */
   height: auto;
   cursor: pointer;
   opacity: 0;
   animation: fadeInBubble 2s ease 1.5s forwards, float 3s ease-in-out infinite 3.5s;
 }
 
-
-/* Default size (for large screens like desktops) */
 .speech-bubble-link img {
-  width: 100px;
+  width: 100%;
   height: auto;
   display: block;
 }
 
-/* For tablets (width between 481px and 768px) */
-@media (max-width: 768px) and (min-width: 481px) {
-  .speech-bubble-link img {
-    width: 15vw; /* 🎯 15% of the viewport width */
-  }
-}
-
-/* For mobile phones (width 480px and smaller) */
-@media (max-width: 480px) {
-  .speech-bubble-link img {
-    width: 20vw; /* 🎯 20% of the viewport width */
-  }
-}
-
-
-
 .speech-bubble-link:hover {
   transform: scale(1.1);
 }
-
-
 
 /* Flowers */
 .flower {
@@ -113,6 +93,89 @@ body.landing-page {
 @media (max-width: 480px) {
   .flower {
     width: 150px;
+  }
+}
+
+/* Home Page Styles (old index.html, now home.html) */
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f7e8d5;
+}
+
+.logo {
+  max-width: 300px;
+  width: 100%;
+}
+
+/* Navigation */
+nav {
+  background-color: #f3d6c1;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #d06224;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f3d6c1;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Social Links in Nav */
+nav ul li.social-link {
+  display: inline-block;
+  margin-left: 1.5rem;
+  vertical-align: middle;
+}
+
+nav ul li.social-link img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  transition: opacity 0.3s;
+}
+
+nav ul li.social-link img:hover {
+  opacity: 0.7;
+}
+
+/* Page Fade In */
+.page-wrapper {
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
 
@@ -149,17 +212,5 @@ body.landing-page {
   }
   100% {
     filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
-  }
-}
-
-/* Fade In Landing Page */
-.page-wrapper {
-  animation: fadeIn 2s ease forwards;
-  opacity: 0;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
   }
 }
