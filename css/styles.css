@@ -115,14 +115,14 @@ header {
 /* Navigation */
 nav {
   background-color: #f3d6c1;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  align-items: center; /* 👈 align logo and links vertically */
-  justify-content: center; /* center links horizontally */
+  align-items: center;      /* Center items vertically */
+  justify-content: flex-start; /* 👈 Move everything to the LEFT */
   flex-wrap: wrap;
   gap: 2rem;
   margin: 0;
@@ -134,8 +134,9 @@ nav li {
   align-items: center;
 }
 
+/* ✨ Logo Styling */
 nav li.logo img {
-  height: 50px; /* 🎯 adjust logo size */
+  height: 70px; /* 🎯 Bigger logo size */
   width: auto;
 }
 
@@ -152,6 +153,7 @@ nav a:hover {
   color: #d06224;
 }
 
+/* Social Icons */
 nav ul li.social-link img {
   width: 28px;
   height: 28px;
@@ -161,6 +163,7 @@ nav ul li.social-link img {
 nav ul li.social-link img:hover {
   opacity: 0.7;
 }
+
 
 /* Social Icons inside Nav */
 nav ul li.social-link {
