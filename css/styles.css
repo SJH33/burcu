@@ -43,9 +43,12 @@ body.landing-page {
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-/* Speech Bubble */
+
+
 .speech-bubble-link {
   position: absolute;
+  top: 9%;
+  left: 53%;
   width: 6vw;
   height: auto;
   cursor: pointer;
