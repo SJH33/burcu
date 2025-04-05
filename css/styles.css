@@ -430,3 +430,58 @@ main {
   right: 0;
   background: linear-gradient(to left, #fff 0%, rgba(255,255,255,0) 100%);
 }
+
+/* Lightbox Styles */
+.lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* dark overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1001;
+}
+
+.lightbox-button.left {
+  left: 30px;
+}
+
+.lightbox-button.right {
+  right: 30px;
+}
+
+.lightbox-button:hover {
+  background: rgba(255,255,255,1);
+}
