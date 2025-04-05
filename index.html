@@ -26,5 +26,20 @@
       <!-- Sparkles floating -->
       <div class="sparkles"></div>
     </div>
+    <script>
+      function positionSpeechBubble() {
+        const img = document.getElementById('landingImage');
+        const bubble = document.getElementById('speechBubble');
+        const imgRect = img.getBoundingClientRect();
+    
+        // Set bubble relative to the image
+        bubble.style.top = (imgRect.top + imgRect.height * 0.2) + 'px'; // 20% down from the top of the image
+        bubble.style.left = (imgRect.left + imgRect.width * 0.55) + 'px'; // 55% across from the left of the image
+      }
+    
+      window.addEventListener('load', positionSpeechBubble);
+      window.addEventListener('resize', positionSpeechBubble);
+    </script>
+
   </body>
 </html>
