@@ -441,17 +441,17 @@ body, html {
 
 
 .landing-image {
-  width: auto;
-  height: 100%; /* 🎯 Full height! */
-  max-width: none; /* 🎯 No restriction! */
+  position: absolute;
+  bottom: 0; /* 🎯 Stick to bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Centering trick */
   
-  object-fit: cover; /* 🎯 Cover instead of contain */
-  display: block;
-  margin: 0;
+  max-width: 100%;
+  height: auto;
   
-  /* Optional: glowing pulse */
   animation: pulseGlow 3s ease-in-out infinite;
 }
+
 
 
 
