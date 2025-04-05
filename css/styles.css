@@ -430,6 +430,7 @@ body, html {
   height: 100%;
   overflow: hidden;
 }
+
 .landing-image {
   max-width: 90vw;
   max-height: 90vh;
@@ -437,8 +438,10 @@ body, html {
   display: block;
   margin: 0 auto;
   padding-top: 5vh;
+  
+  /* ✨ Soft glowing edge */
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.7));
 }
-
 
 
 
