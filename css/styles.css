@@ -446,7 +446,7 @@ body.landing-page, html {
   left: 50%;
   transform: translateX(-50%);
   
-  height: 100vh; /* Fill full height */
+  height: 90vh; 
   width: auto;
   object-fit: contain;
 
