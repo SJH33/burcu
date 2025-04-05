@@ -399,4 +399,16 @@ main {
   animation-play-state: paused;
 }
 
+.carousel-wrapper {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  
+  /* 🔥 Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
 
