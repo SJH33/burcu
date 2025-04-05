@@ -554,3 +554,23 @@ main {
   border: 1px solid #d06224;
 }
 
+/* 🌟 Fade-in Animation */
+.art-piece {
+  opacity: 0;
+  transform: translateY(20px); /* start slightly lower */
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: var(--delay, 0s); /* individual delay if you want */
+}
+
+/* Keyframes for Fade-In + Up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
