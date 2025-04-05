@@ -27,3 +27,20 @@ document.addEventListener('DOMContentLoaded', function() {
     galleryGrid.appendChild(div);
   });
 });
+
+
+images.forEach((image, index) => {
+  const div = document.createElement('div');
+  div.classList.add('art-piece');
+  div.setAttribute('data-category', image.categories.join(' '));
+  
+  // 👇 Add a little delay for each art piece
+  div.style.setProperty('--delay', `${index * 0.1}s`);
+
+  const img = document.createElement('img');
+  img.src = image.src;
+  img.alt = image.alt;
+
+  div.appendChild(img);
+  galleryGrid.appendChild(div);
+});
