@@ -579,3 +579,16 @@ body.landing-page {
 }
 
 
+@media (max-width: 768px) {
+  .flower {
+    width: 120px; /* smaller flowers on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .flower {
+    width: 90px; /* smaller flowers on phones */
+  }
+}
+
+
