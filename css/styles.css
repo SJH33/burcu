@@ -574,3 +574,28 @@ main {
   }
 }
 
+.gallery-filters button {
+  background-color: #f7e8d5;
+  color: #444;
+  border: 2px solid #d06224;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease, transform 0.1s ease; /* 👈 added transform */
+}
+
+.gallery-filters button:hover {
+  background-color: #f3d6c1;
+  transform: scale(1.05); /* 👈 gently grow on hover */
+}
+
+/* When Active (selected) */
+.gallery-filters button.active {
+  background-color: #d06224;
+  color: #fffaf5;
+  border: 1px solid #d06224;
+  transform: scale(0.95); /* 👈 gently press down when active */
+}
+
