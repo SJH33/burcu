@@ -453,4 +453,17 @@ body, html {
   transform: scale(1.1);
 }
 
+/* Make entire landing page fade in */
+.page-wrapper {
+  animation: fadeIn 2s ease forwards;
+  opacity: 0; /* Start invisible */
+}
+
+/* Define the fadeIn keyframes */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 
