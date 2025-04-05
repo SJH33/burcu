@@ -44,24 +44,25 @@
   </div>
 
   <script>
-    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    const carouselTrack = document.querySelector('.carousel-track');
     const leftButton = document.querySelector('.carousel-button.left');
     const rightButton = document.querySelector('.carousel-button.right');
   
     leftButton.addEventListener('click', () => {
-      carouselWrapper.scrollBy({
+      carouselTrack.scrollBy({
         left: -300, // 👈 scroll left 300px
         behavior: 'smooth'
       });
     });
   
     rightButton.addEventListener('click', () => {
-      carouselWrapper.scrollBy({
+      carouselTrack.scrollBy({
         left: 300, // 👈 scroll right 300px
         behavior: 'smooth'
       });
     });
   </script>
+
 
 
   
