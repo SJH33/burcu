@@ -41,8 +41,8 @@ body.landing-page {
 /* Speech Bubble - now positioned relative to the IMAGE */
 .speech-bubble-link {
   position: absolute;
-  top: 15%; /* 🔥 Now 15% of the image height */
-  left: 55%; /* 🔥 Now 55% of the image width */
+  top: 10%; /* 🔥 Now 15% of the image height */
+  left: 35%; /* 🔥 Now 55% of the image width */
   width: 6vw;
   height: auto;
   cursor: pointer;
