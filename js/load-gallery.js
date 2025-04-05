@@ -44,3 +44,23 @@ images.forEach((image, index) => {
   div.appendChild(img);
   galleryGrid.appendChild(div);
 });
+
+
+images.forEach((image) => {
+  const div = document.createElement('div');
+  div.classList.add('art-piece');
+  div.setAttribute('data-category', image.categories.join(' '));
+
+  const img = document.createElement('img');
+  img.src = image.src;
+  img.alt = image.alt;
+
+  // ✨ Caption wrapped inside a hover div
+  const caption = document.createElement('div');
+  caption.classList.add('hover-caption');
+  caption.textContent = image.alt;
+
+  div.appendChild(img);
+  div.appendChild(caption);
+  galleryGrid.appendChild(div);
+});
