@@ -23,21 +23,27 @@ body.landing-page {
 
 .image-container {
   position: relative;
-  width: auto;
+  width: 100%;
   height: 100%;
 }
 
+/* Landing Image */
 .landing-image {
+  position: absolute;
+  bottom: 0; /* 👈 Attach to bottom */
+  left: 50%;
+  transform: translateX(-50%);
   width: auto;
-  height: 90vh;
+  height: 100vh; /* 👈 Full screen height */
   object-fit: contain;
   display: block;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.9)); /* ✨ Glow */
+  animation: pulseGlow 3s ease-in-out infinite;
 }
 
-
-
-/* Speech Bubble - now positioned relative to the IMAGE */
+/* Speech Bubble */
 .speech-bubble-link {
   position: absolute;
   width: 6vw;
@@ -47,25 +53,23 @@ body.landing-page {
   animation: fadeInBubble 2s ease 1.5s forwards, float 3s ease-in-out infinite 3.5s;
 }
 
+/* Speech Bubble Image */
 .speech-bubble-link img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-
 .speech-bubble-link:hover {
   transform: scale(1.1);
 }
 
-/* Responsive Bubble Resize */
+/* Responsive Speech Bubble Size */
 @media (max-width: 768px) {
   .speech-bubble-link img {
     width: 50px;
   }
 }
-
-
 
 /* Flowers */
 .flower {
@@ -85,7 +89,7 @@ body.landing-page {
   right: 20px;
 }
 
-/* Flower Responsive */
+/* Responsive Flowers */
 @media (max-width: 768px) {
   .flower {
     width: 200px;
@@ -134,9 +138,7 @@ body.landing-page {
   }
 }
 
-
-
-/* Make full page fade-in */
+/* Fade In Landing Page */
 .page-wrapper {
   animation: fadeIn 2s ease forwards;
   opacity: 0;
