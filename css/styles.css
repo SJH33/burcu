@@ -34,7 +34,7 @@ body.landing-page {
   left: 50%;
   transform: translateX(-50%);
   width: auto;
-  height: 100vh; /* 👈 Full screen height */
+  height: 80vh; /* 👈 Full screen height */
   object-fit: contain;
   display: block;
   margin: 0;
