@@ -1,7 +1,6 @@
 <body>
   <div data-include="partials/header.html"></div>
   <div data-include="partials/nav.html"></div>
- 
 
   <main>
     <section class="gallery-section">
@@ -9,31 +8,22 @@
       <div class="gallery-filters">
         <button data-filter="all" class="active">All</button>
         <button data-filter="portrait">Portrait</button>
+        <button data-filter="woman">Woman</button>
         <button data-filter="flower">Flower</button>
-        <button data-filter="scenery">Scenery</button>
         <button data-filter="animal">Animal</button>
+        <button data-filter="child">Child</button>
+        <button data-filter="holiday">Holiday</button>
       </div>
 
-    
       <div class="gallery-grid">
-        <!-- Images will load here from JS -->
+        <!-- Images will be inserted here by JavaScript -->
       </div>
-
     </section>
   </main>
 
-
   <div data-include="partials/footer.html"></div>
-  
-  <!-- 1. Include.js loads your header/footer/nav (if needed before DOM) -->
+
   <script src="js/include.js"></script>
-  
-  <!-- 2. load-gallery.js dynamically inserts art pieces into the DOM -->
-  <script src="js/load-gallery.js"></script>
-  
-  <!-- 3. gallery-filter.js adds filter behavior AFTER items are in the DOM -->
-  <script src="js/gallery-filter.js"></script>
-
-
+  <script src="js/load-gallery.js"></script> <!-- 💥 We will create this -->
+  <script src="js/gallery-filter.js"></script> <!-- 💥 We will create this -->
 </body>
-
