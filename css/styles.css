@@ -465,8 +465,8 @@ body.landing-page, html {
 /* Speech Bubble Position */
 .speech-bubble-link {
   position: absolute;
-  top: 10vh;
-  left: 30vw;
+  top: 10%
+  left: 20%;
   width: 6vw;
   height: auto;
   cursor: pointer;
