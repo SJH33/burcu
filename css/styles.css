@@ -495,3 +495,7 @@ body, html {
   }
 }
 
+body.landing-page {
+  background-color: #e4e8ec; /* 🎨 Burcu's soft background color */
+}
+
