@@ -327,58 +327,25 @@ main {
 
 /* Carousel Section */
 .carousel-container {
+  position: relative;
   overflow: hidden;
   width: 100%;
   background-color: #fff;
   padding: 2rem 0;
 }
 
+/* New wrapper: scrollable */
+.carousel-wrapper {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
 .carousel-track {
   display: flex;
-  width: calc(250px * 16); /* 8 original + 8 duplicated = 16 total */
+  width: max-content; /* 👈 allow track to be wide automatically */
   animation: scroll 40s linear infinite;
 }
 
-.carousel-track img {
-  width: 250px;
-  height: 500px;
-  object-fit: cover;
-  margin-right: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%); /* Move half way to loop perfectly */
-  }
-}
-
-/* Pause on hover */
-.carousel-track:hover {
-  animation-play-state: paused;
-}
-
-/* Carousel Container */
-.carousel-container {
-  position: relative; /* 🛠 Important so arrows position inside */
-  overflow: hidden;
-  width: 100%;
-  background-color: #fff;
-  padding: 2rem 0;
-}
-
-/* Carousel Track */
-.carousel-track {
-  display: flex;
-  width: calc(250px * 16); /* 8 original + 8 duplicated */
-  animation: scroll 40s linear infinite;
-}
-
-/* Images */
 .carousel-track img {
   width: 250px;
   height: 500px;
@@ -404,18 +371,16 @@ main {
   transition: background-color 0.3s;
 }
 
-.carousel-button:hover {
-  background-color: rgba(255, 255, 255, 1);
-}
-
-/* Left Button */
 .carousel-button.left {
   left: 10px;
 }
 
-/* Right Button */
 .carousel-button.right {
   right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 /* Keyframes */
@@ -428,8 +393,9 @@ main {
   }
 }
 
-/* Pause on hover */
-.carousel-track:hover {
+/* NEW: Pause scroll on hover on entire container */
+.carousel-container:hover .carousel-track {
   animation-play-state: paused;
 }
+
 
