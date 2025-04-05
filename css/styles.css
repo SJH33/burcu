@@ -412,3 +412,21 @@ main {
   display: none; /* Chrome, Safari, Opera */
 }
 
+.fade-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px; /* How much to fade */
+  pointer-events: none; /* Don't block clicks on arrows */
+  z-index: 5;
+}
+
+.fade-overlay.left {
+  left: 0;
+  background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0) 100%);
+}
+
+.fade-overlay.right {
+  right: 0;
+  background: linear-gradient(to left, #fff 0%, rgba(255,255,255,0) 100%);
+}
