@@ -444,6 +444,13 @@ body, html {
 
 
 /* Position the speech bubble */
+
+.speech-bubble-link img {
+  width: 80px;  /* 🎯 Control width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
 .speech-bubble-link {
   position: absolute;
   top: 18%;
