@@ -551,3 +551,23 @@ body.landing-page {
     filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
   }
 }
+
+
+
+ /* Position the flowers */
+.flower {
+  position: absolute;
+  width: 100px;  /* 🎯 adjust size as needed */
+  height: auto;
+  pointer-events: none; /* Don't block clicks on speech bubble */
+}
+
+.top-left {
+  top: 20px;    /* Distance from top */
+  left: 20px;   /* Distance from left */
+}
+
+.bottom-right {
+  bottom: 20px; /* Distance from bottom */
+  right: 20px;  /* Distance from right */
+}
