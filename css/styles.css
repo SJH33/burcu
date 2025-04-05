@@ -418,68 +418,59 @@ nav li a img {
 }
 
 
-body, html {
+
+***
+body.landing-page, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: #d4e8d6; /* Soft background color */
 }
 
 .landing-wrapper {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full screen */
+  height: 100vh; /* Full screen height */
   overflow: hidden;
-  
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Push content to bottom */
   align-items: center;
-  padding: 0;
-  margin: 0;
+  justify-content: flex-end; /* Push everything to the bottom */
+  flex-direction: column;
 }
 
-
-
 .landing-image {
-  position: absolute;
-  bottom: 0; /* 🎯 Stick to bottom */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Centering trick */
-  
-  max-width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
   
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-
-
-
-
-
-
-
-/* Position the speech bubble */
-
-.speech-bubble-link img {
-  width: 80px;  /* 🎯 Control width */
-  height: auto; /* Maintain aspect ratio */
-  display: block;
-}
-
+/* Speech Bubble Position */
 .speech-bubble-link {
   position: absolute;
-  top: 4%;
-  left: 43%;
+  top: 20%;
+  left: 55%;
   width: 80px;
   height: auto;
   cursor: pointer;
   
-  /* Fade-in settings */
   opacity: 0;
   animation: fadeInBubble 2s ease 1.5s forwards, float 3s ease-in-out infinite 3.5s;
-  /*      fadeInBubble   +   float after fade-in ends */
 }
+
+.speech-bubble-link img {
+  width: 80px;
+  height: auto;
+  display: block;
+}
+
+***
+
+
+
 
 /* Fade in and pop */
 @keyframes fadeInBubble {
