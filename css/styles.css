@@ -597,6 +597,11 @@ main {
   animation-delay: var(--delay, 0s); /* individual delay if you want */
 }
 
+.art-piece:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 /* Keyframes for Fade-In + Up */
 @keyframes fadeInUp {
   0% {
