@@ -103,5 +103,58 @@
   });
 </script>
 
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const carouselImages = document.querySelectorAll('.carousel-track img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const closeLightbox = document.getElementById('closeLightbox');
+    const prevButton = document.getElementById('prevImage');
+    const nextButton = document.getElementById('nextImage');
+
+    let currentIndex = 0;
+    const imageSources = Array.from(carouselImages).map(img => img.src);
+
+    // Open lightbox
+    carouselImages.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        currentIndex = index;
+        showImage(currentIndex);
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    // Show image in lightbox
+    function showImage(index) {
+      lightboxImage.src = imageSources[index];
+    }
+
+    // Close lightbox
+    closeLightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    // Previous image
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+      showImage(currentIndex);
+    });
+
+    // Next image
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % imageSources.length;
+      showImage(currentIndex);
+    });
+
+    // Optional: Close lightbox by clicking outside the image
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+
 
 </body>
