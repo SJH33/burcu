@@ -99,7 +99,7 @@ body.landing-page {
 /* Header */
 header {
   background-color: #f7e8d5;
-  height: 80px; /* 🎯 Fixed height, adjust slightly if needed */
+  height: 100px; /* 🎯 Fixed height, adjust slightly if needed */
   display: flex;
   align-items: center;
   justify-content: center;
