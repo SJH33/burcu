@@ -431,11 +431,14 @@ body, html {
   overflow: hidden;
 }
 .landing-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* 🛠 Important */
+  max-width: 90vw; /* Max width relative to screen size */
+  max-height: 90vh; /* Max height relative to screen size */
+  object-fit: contain;
   display: block;
+  margin: 0 auto; /* Center horizontally */
+  padding-top: 5vh; /* Optional: push a little down from top */
 }
+
 
 
 /* Position the speech bubble */
