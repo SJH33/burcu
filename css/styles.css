@@ -361,3 +361,75 @@ main {
 .carousel-track:hover {
   animation-play-state: paused;
 }
+
+/* Carousel Container */
+.carousel-container {
+  position: relative; /* 🛠 Important so arrows position inside */
+  overflow: hidden;
+  width: 100%;
+  background-color: #fff;
+  padding: 2rem 0;
+}
+
+/* Carousel Track */
+.carousel-track {
+  display: flex;
+  width: calc(250px * 16); /* 8 original + 8 duplicated */
+  animation: scroll 40s linear infinite;
+}
+
+/* Images */
+.carousel-track img {
+  width: 250px;
+  height: 500px;
+  object-fit: cover;
+  margin-right: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Arrows */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Left Button */
+.carousel-button.left {
+  left: 10px;
+}
+
+/* Right Button */
+.carousel-button.right {
+  right: 10px;
+}
+
+/* Keyframes */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on hover */
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
