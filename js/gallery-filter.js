@@ -1,27 +1,25 @@
-function setupFilters() {
-  const buttons = document.querySelectorAll(".gallery-filters button");
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.gallery-filters button');
+  const items = document.querySelectorAll('.art-piece');
 
   buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const filter = button.getAttribute("data-filter");
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
 
-      // ✅ Update active class
-      buttons.forEach((btn) => btn.classList.remove("active"));
-      button.classList.add("active");
+      // Remove active class from all buttons
+      buttons.forEach(btn => btn.classList.remove('active'));
+      // Add active class to clicked button
+      button.classList.add('active');
 
-      // ✅ Filter logic
-      const items = document.querySelectorAll(".art-piece");
       items.forEach((item) => {
-        const category = item.getAttribute("data-category");
-        if (filter === "all" || category === filter) {
-          item.style.removeProperty("display");
+        const categories = item.getAttribute('data-category');
+        
+        if (filter === 'all' || categories.includes(filter)) {
+          item.style.display = '';
         } else {
-          item.style.display = "none";
+          item.style.display = 'none';
         }
       });
     });
   });
-}
-
-// Make it available globally
-window.setupFilters = setupFilters;
+});
