@@ -43,12 +43,6 @@ body.landing-page {
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-/* Responsive Speech Bubble Size */
-@media (max-width: 768px) {
-  .speech-bubble-link img {
-    width: 15vw;
-  }
-}
 
 .speech-bubble-link {
   position: absolute;
@@ -61,12 +55,29 @@ body.landing-page {
   animation: fadeInBubble 2s ease 1.5s forwards, float 3s ease-in-out infinite 3.5s;
 }
 
-/* Speech Bubble Image */
+
+/* Default size (for large screens like desktops) */
 .speech-bubble-link img {
-  width: 100%;
+  width: 6vw;
   height: auto;
   display: block;
 }
+
+/* For tablets (width between 481px and 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .speech-bubble-link img {
+    width: 15vw; /* 🎯 15% of the viewport width */
+  }
+}
+
+/* For mobile phones (width 480px and smaller) */
+@media (max-width: 480px) {
+  .speech-bubble-link img {
+    width: 20vw; /* 🎯 20% of the viewport width */
+  }
+}
+
+
 
 .speech-bubble-link:hover {
   transform: scale(1.1);
