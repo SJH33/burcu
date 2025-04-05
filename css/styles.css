@@ -358,3 +358,8 @@ main {
   }
 }
 
+/* Pause the carousel when hovering */
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
