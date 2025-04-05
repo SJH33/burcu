@@ -325,3 +325,36 @@ main {
   justify-content: center; /* center vertically if you want */
 }
 
+/* Carousel Section */
+.carousel-container {
+  overflow: hidden; /* Hide anything outside the box */
+  width: 100%;
+  background-color: #fff; /* or any background you like */
+  padding: 2rem 0;
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(250px * 16); /* 8 images * 2 (for looping effect) */
+  animation: scroll 40s linear infinite; /* 👈 control speed here */
+}
+
+.carousel-track img {
+  width: 250px; /* 📱 Phone screen size */
+  height: 500px;
+  object-fit: cover;
+  margin-right: 2rem; /* Space between images */
+  border-radius: 20px; /* Soft corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Keyframes for smooth scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move left by half the total width */
+  }
+}
+
