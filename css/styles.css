@@ -437,8 +437,9 @@ body, html {
   display: block;
   margin: 0 auto;
   padding-top: 5vh;
-  filter: drop-shadow(0 0 30px rgba(228, 232, 236, 0.6));
+  filter: drop-shadow(0 0 30px rgba(228, 232, 236, 0.6)); /* Soft watercolor glow */
 }
+
 
 
 
