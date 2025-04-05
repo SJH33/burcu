@@ -18,38 +18,35 @@ body.landing-page {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
+  background-color: #42745B;
 }
 
 .image-container {
   position: relative;
   width: auto;
-  height: 90vh;
+  height: 100%;
 }
 
+/* Landing Image */
 .landing-image {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
   width: auto;
-  height: 90vh;
+  height: 100%;
   object-fit: contain;
+  display: block;
+  margin: 0 auto;
   filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.9));
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-/* Speech Bubble */
+/* Speech Bubble - now positioned relative to the IMAGE */
 .speech-bubble-link {
   position: absolute;
-  top: 10%;
-  left: 20%;
+  top: 15%; /* 🔥 Now 15% of the image height */
+  left: 55%; /* 🔥 Now 55% of the image width */
   width: 6vw;
   height: auto;
   cursor: pointer;
+  
   opacity: 0;
   animation: fadeInBubble 2s ease 1.5s forwards, float 3s ease-in-out infinite 3.5s;
 }
@@ -59,6 +56,7 @@ body.landing-page {
   height: auto;
   display: block;
 }
+
 
 .speech-bubble-link:hover {
   transform: scale(1.1);
