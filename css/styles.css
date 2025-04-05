@@ -563,7 +563,7 @@ body.landing-page {
  /* Position the flowers */
 .flower {
   position: absolute;
-  width: 150px;  /* 🎯 adjust size as needed */
+  width: 300px;  /* 🎯 adjust size as needed */
   height: auto;
   pointer-events: none; /* Don't block clicks on speech bubble */
 }
@@ -581,13 +581,13 @@ body.landing-page {
 
 @media (max-width: 768px) {
   .flower {
-    width: 120px; /* smaller flowers on tablets */
+    width: 200px; /* smaller flowers on tablets */
   }
 }
 
 @media (max-width: 480px) {
   .flower {
-    width: 90px; /* smaller flowers on phones */
+    width: 100px; /* smaller flowers on phones */
   }
 }
 
