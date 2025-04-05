@@ -188,26 +188,36 @@ img {
 /* 🖼 Grid Layout */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* ✨ Responsive magic */
-  gap: 1.5rem; /* Space between images */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
   padding: 1rem 0;
 }
 
+
+
+
+
+
 /* 🎯 Each Art Piece */
 .art-piece {
-  border: 4px solid #e0c7b7;
-  padding: 0.5rem;
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* 🟧 This makes it a square (1:1 aspect ratio) */
   background-color: #fff;
-  transition: transform 0.3s ease;
-  overflow: hidden;
+  border: 4px solid #e0c7b7;
   border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
 .art-piece img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px; /* Round the corners a little */
+  height: 100%;
+  object-fit: cover; /* 📸 Keeps images consistent */
+  border-radius: 8px;
 }
 
 /* 🎯 Hover effect */
