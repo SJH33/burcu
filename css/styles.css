@@ -449,9 +449,14 @@ body.landing-page, html {
   height: 90vh; 
   width: auto;
   object-fit: contain;
+  /* ✨ Big, visible glow around the edges */
+  filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.9));
 
   animation: pulseGlow 3s ease-in-out infinite;
 }
+
+
+
 
 
 /* Speech Bubble Position */
