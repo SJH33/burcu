@@ -441,13 +441,30 @@ body, html {
 /* Position the speech bubble */
 .speech-bubble-link {
   position: absolute;
-  top: 18%;   /* 🛠 Move up or down */
-  left: 54%;  /* 🛠 Move left or right */
-  width: 80px; /* Size of speech bubble */
+  top: 18%;
+  left: 54%;
+  width: 80px;
   height: auto;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  
+  /* Fade-in settings */
+  opacity: 0;
+  animation: fadeInBubble 2s ease 1.5s forwards, float 3s ease-in-out infinite 3.5s;
+  /*      fadeInBubble   +   float after fade-in ends */
 }
+
+/* Fade in and pop */
+@keyframes fadeInBubble {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
 .speech-bubble-link:hover {
   transform: scale(1.1);
@@ -466,4 +483,15 @@ body, html {
   }
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
