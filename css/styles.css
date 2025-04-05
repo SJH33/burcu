@@ -106,7 +106,7 @@ header {
   padding: 0 1rem; /* Only horizontal padding */
 }
 .logo {
-  max-height: 80px; /* 🎯 Logo fits inside the 80px header */
+  max-height: 100px; /* 🎯 Logo fits inside the 80px header */
   width: auto;
 }
 
