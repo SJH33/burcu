@@ -43,7 +43,12 @@ body.landing-page {
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-
+/* Responsive Speech Bubble Size */
+@media (max-width: 768px) {
+  .speech-bubble-link img {
+    width: 15vw;
+  }
+}
 
 .speech-bubble-link {
   position: absolute;
