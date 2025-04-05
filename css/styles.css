@@ -170,31 +170,80 @@ img {
 
 
 /* Gallery for Home Page */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
+/* 🎨 Gallery Page Styles */
+.gallery-section {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 3rem auto;
+  padding: 0 2rem;
 }
 
+.gallery-section h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.5rem;
+  color: #d06224;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* 🖼 Grid Layout */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* ✨ Responsive magic */
+  gap: 1.5rem; /* Space between images */
+  padding: 1rem 0;
+}
+
+/* 🎯 Each Art Piece */
 .art-piece {
   border: 4px solid #e0c7b7;
   padding: 0.5rem;
   background-color: #fff;
   transition: transform 0.3s ease;
   overflow: hidden;
+  border-radius: 12px;
 }
 
 .art-piece img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 8px; /* Round the corners a little */
 }
 
+/* 🎯 Hover effect */
 .art-piece:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* 🎯 Filter Buttons */
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-filters button {
+  background-color: #f7e8d5;
+  color: #444;
+  border: 2px solid #d06224;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-filters button:hover {
+  background-color: #f3d6c1;
+}
+
+.gallery-filters button.active {
+  background-color: #d06224;
+  color: #fffaf5;
 }
 
 /* Footer */
