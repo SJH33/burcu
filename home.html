@@ -153,7 +153,25 @@
       }
     });
   });
+    // Allow keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (lightbox.style.display === 'flex') {
+    if (e.key === 'ArrowLeft') {
+      // Left arrow key pressed
+      currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+      showImage(currentIndex);
+    } else if (e.key === 'ArrowRight') {
+      // Right arrow key pressed
+      currentIndex = (currentIndex + 1) % imageSources.length;
+      showImage(currentIndex);
+    } else if (e.key === 'Escape') {
+      // Escape key to close
+      lightbox.style.display = 'none';
+    }
+  }
+});
 </script>
+
 
 
 
