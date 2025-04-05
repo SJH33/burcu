@@ -58,7 +58,7 @@ body.landing-page {
 
 /* Default size (for large screens like desktops) */
 .speech-bubble-link img {
-  width: 6vw;
+  width: 100px;
   height: auto;
   display: block;
 }
