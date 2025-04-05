@@ -2,92 +2,53 @@
   <div class="page-wrapper">
     <div data-include="partials/header.html"></div>
     <div data-include="partials/nav.html"></div>
-    
+
     <main>
       <section class="carousel-container">
-    
-        <button class="carousel-button left">&#10094;</button> <!-- LEFT ARROW -->
-    
+        <button class="carousel-button left">&#10094;</button>
+
         <div class="carousel-wrapper">
           <div class="carousel-track">
-            <!-- 8 images -->
-            <img src="images/burcu_art1.png" alt="Art 1" />
-            <img src="images/burcu_art2.png" alt="Art 2" />
-            <img src="images/burcu_art3.png" alt="Art 3" />
-            <img src="images/burcu_art4.png" alt="Art 4" />
-            <img src="images/burcu_art5.png" alt="Art 5" />
-            <img src="images/burcu_art6.png" alt="Art 6" />
-            <img src="images/burcu_art7.png" alt="Art 7" />
-            <img src="images/burcu_art8.png" alt="Art 8" />
-    
-            <!-- Duplicate 8 images again -->
-            <img src="images/burcu_art1.png" alt="Art 1" />
-            <img src="images/burcu_art2.png" alt="Art 2" />
-            <img src="images/burcu_art3.png" alt="Art 3" />
-            <img src="images/burcu_art4.png" alt="Art 4" />
-            <img src="images/burcu_art5.png" alt="Art 5" />
-            <img src="images/burcu_art6.png" alt="Art 6" />
-            <img src="images/burcu_art7.png" alt="Art 7" />
-            <img src="images/burcu_art8.png" alt="Art 8" />
+            <!-- 8 images + duplicates -->
           </div>
         </div>
-    
-        <button class="carousel-button right">&#10095;</button> <!-- RIGHT ARROW -->
-    
+
+        <button class="carousel-button right">&#10095;</button>
       </section>
     </main>
-    
-
-
 
     <div data-include="partials/footer.html"></div>
   </div>
+
+  <!-- 🛠 Load partials -->
   <script src="js/include.js"></script>
 
+  <!-- 🛠 Carousel control -->
   <script>
-  const carouselWrapper = document.querySelector('.carousel-wrapper');
-  const leftButton = document.querySelector('.carousel-button.left');
-  const rightButton = document.querySelector('.carousel-button.right');
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    const leftButton = document.querySelector('.carousel-button.left');
+    const rightButton = document.querySelector('.carousel-button.right');
 
-  // Click arrows to scroll manually
-  leftButton.addEventListener('click', () => {
-    carouselWrapper.scrollBy({
-      left: -300, 
-      behavior: 'smooth'
+    leftButton.addEventListener('click', () => {
+      carouselWrapper.scrollBy({ left: -300, behavior: 'smooth' });
     });
-  });
 
-  rightButton.addEventListener('click', () => {
-    carouselWrapper.scrollBy({
-      left: 300, 
-      behavior: 'smooth'
+    rightButton.addEventListener('click', () => {
+      carouselWrapper.scrollBy({ left: 300, behavior: 'smooth' });
     });
-  });
 
-  // Auto-scroll function
-  function autoScroll() {
-    carouselWrapper.scrollBy({
-      left: 1, // 👈 scroll slowly
-      behavior: 'auto'
+    function autoScroll() {
+      carouselWrapper.scrollBy({ left: 1, behavior: 'auto' });
+    }
+
+    let scrollInterval = setInterval(autoScroll, 30);
+
+    carouselWrapper.addEventListener('mouseover', () => {
+      clearInterval(scrollInterval);
     });
-  }
 
-  // Start auto-scrolling
-  let scrollInterval = setInterval(autoScroll, 30); // 🎯 adjust speed (lower = faster)
-
-  // Pause auto-scroll on hover
-  carouselWrapper.addEventListener('mouseover', () => {
-    clearInterval(scrollInterval);
-  });
-
-  // Resume auto-scroll when not hovering
-  carouselWrapper.addEventListener('mouseout', () => {
-    scrollInterval = setInterval(autoScroll, 30);
-  });
-</script>
-
-
-
-
-  
+    carouselWrapper.addEventListener('mouseout', () => {
+      scrollInterval = setInterval(autoScroll, 30);
+    });
+  </script>
 </body>
