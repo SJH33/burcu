@@ -47,8 +47,8 @@ body.landing-page {
 
 .speech-bubble-link {
   position: absolute;
-  top: 9%;
-  left: 53%;
+  top: 5%;
+  left: 25%;
   width: 6vw;
   height: auto;
   cursor: pointer;
