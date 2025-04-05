@@ -153,6 +153,74 @@ nav a:hover {
   color: #d06224;
 }
 
+/* Navbar Overall */
+nav {
+  background-color: #f3d6c1;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999; /* 👈 stay on top while scrolling */
+}
+
+/* Flex container inside nav */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Styling */
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.8rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #d06224;
+}
+
+/* Social Icons */
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+  transition: opacity 0.3s;
+}
+
+.social-links img:hover {
+  opacity: 0.7;
+}
+
+
 /* Social Icons */
 nav ul li.social-link img {
   width: 28px;
