@@ -1,59 +1,29 @@
-async function fetchGalleryItems() {
-  const galleryGrid = document.querySelector(".gallery-grid");
+document.addEventListener('DOMContentLoaded', function() {
+  const galleryGrid = document.querySelector('.gallery-grid');
 
-  const files = [
-    "gallery/portrait-placeholder.md",
-    "gallery/flower-placeholder.md",
-    "gallery/scenery-placeholder.md",
-    "gallery/animal-placeholder.md"
+  // Your image data
+  const images = [
+    { src: 'images/burcu_art1.png', alt: 'Art 1', categories: ['child', 'animal', 'portrait'] },
+    { src: 'images/burcu_art2.png', alt: 'Art 2', categories: ['portrait', 'woman', 'flower'] },
+    { src: 'images/burcu_art3.png', alt: 'Art 3', categories: ['flower', 'woman', 'portrait'] },
+    { src: 'images/burcu_art4.png', alt: 'Art 4', categories: ['woman', 'flower', 'portrait', 'animal'] },
+    { src: 'images/burcu_art5.png', alt: 'Art 5', categories: ['woman', 'flower', 'portrait'] },
+    { src: 'images/burcu_art6.png', alt: 'Art 6', categories: ['woman', 'flower', 'portrait'] },
+    { src: 'images/burcu_art7.png', alt: 'Art 7', categories: ['woman', 'flower', 'portrait'] },
+    { src: 'images/burcu_art8.png', alt: 'Art 8', categories: ['woman', 'flower', 'portrait'] }
   ];
 
-  for (const file of files) {
-    try {
-      const response = await fetch(file);
-      const text = await response.text();
-      const frontmatter = parseFrontMatter(text);
+  // Insert images into the grid
+  images.forEach((image) => {
+    const div = document.createElement('div');
+    div.classList.add('art-piece');
+    div.setAttribute('data-category', image.categories.join(' '));
 
-      const artDiv = document.createElement("div");
-      artDiv.classList.add("art-piece");
-      artDiv.dataset.category = frontmatter.category;
+    const img = document.createElement('img');
+    img.src = image.src;
+    img.alt = image.alt;
 
-      const img = document.createElement("img");
-      img.src = frontmatter.image;
-      img.alt = frontmatter.alt || frontmatter.title;
-
-      artDiv.appendChild(img);
-      galleryGrid.appendChild(artDiv);
-    } catch (err) {
-      console.error(`Failed to load ${file}`, err);
-    }
-  }
-}
-
-function parseFrontMatter(mdContent) {
-  const lines = mdContent.split("\n");
-  const frontmatter = {};
-  let inFrontMatter = false;
-
-  for (let line of lines) {
-    if (line.trim() === "---") {
-      inFrontMatter = !inFrontMatter;
-      continue;
-    }
-    if (inFrontMatter && line.includes(":")) {
-      const [key, ...rest] = line.split(":");
-      frontmatter[key.trim()] = rest.join(":").trim().replace(/^"|"$/g, "");
-    }
-  }
-
-  return frontmatter;
-}
-
-
-
-fetchGalleryItems().then(() => {
-  if (typeof window.setupFilters === "function") {
-    window.setupFilters();
-  }
+    div.appendChild(img);
+    galleryGrid.appendChild(div);
+  });
 });
-
