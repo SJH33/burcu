@@ -44,24 +44,47 @@
   </div>
 
   <script>
-    const carouselTrack = document.querySelector('.carousel-track');
-    const leftButton = document.querySelector('.carousel-button.left');
-    const rightButton = document.querySelector('.carousel-button.right');
-  
-    leftButton.addEventListener('click', () => {
-      carouselTrack.scrollBy({
-        left: -300, // 👈 scroll left 300px
-        behavior: 'smooth'
-      });
+  const carouselWrapper = document.querySelector('.carousel-wrapper');
+  const leftButton = document.querySelector('.carousel-button.left');
+  const rightButton = document.querySelector('.carousel-button.right');
+
+  // Click arrows to scroll manually
+  leftButton.addEventListener('click', () => {
+    carouselWrapper.scrollBy({
+      left: -300, 
+      behavior: 'smooth'
     });
-  
-    rightButton.addEventListener('click', () => {
-      carouselTrack.scrollBy({
-        left: 300, // 👈 scroll right 300px
-        behavior: 'smooth'
-      });
+  });
+
+  rightButton.addEventListener('click', () => {
+    carouselWrapper.scrollBy({
+      left: 300, 
+      behavior: 'smooth'
     });
-  </script>
+  });
+
+  // Auto-scroll function
+  function autoScroll() {
+    carouselWrapper.scrollBy({
+      left: 1, // 👈 scroll slowly
+      behavior: 'auto'
+    });
+  }
+
+  // Start auto-scrolling
+  let scrollInterval = setInterval(autoScroll, 30); // 🎯 adjust speed (lower = faster)
+
+  // Pause auto-scroll on hover
+  carouselWrapper.addEventListener('mouseover', () => {
+    clearInterval(scrollInterval);
+  });
+
+  // Resume auto-scroll when not hovering
+  carouselWrapper.addEventListener('mouseout', () => {
+    scrollInterval = setInterval(autoScroll, 30);
+  });
+</script>
+
 
 
 
