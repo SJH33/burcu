@@ -98,10 +98,14 @@ body.landing-page {
 
 /* Header */
 header {
-  text-align: center;
-  padding: 1rem;
   background-color: #f7e8d5;
+  height: 80px; /* 🎯 Fixed height, adjust slightly if needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem; /* Only horizontal padding */
 }
+
 
 .logo {
   max-width: 300px;
