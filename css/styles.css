@@ -417,3 +417,38 @@ nav li a img {
   display: block;
 }
 
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.landing-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.landing-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Position the speech bubble */
+.speech-bubble-link {
+  position: absolute;
+  top: 10%;   /* Adjust this value to position near the bird */
+  left: 65%;  /* Adjust this value to move it left/right */
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.speech-bubble-link:hover {
+  transform: scale(1.1);
+}
