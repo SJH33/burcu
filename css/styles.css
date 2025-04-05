@@ -459,12 +459,15 @@ body.landing-page, html {
 
 
 
+
+
+
 /* Speech Bubble Position */
 .speech-bubble-link {
   position: absolute;
   top: 10vh;
   left: 30vw;
-  width: 80px;
+  width: 6vw;
   height: auto;
   cursor: pointer;
   
@@ -488,7 +491,7 @@ body.landing-page, html {
 
 
 .speech-bubble-link img {
-  width: 80px;
+  width: 100%;
   height: auto;
   display: block;
 }
