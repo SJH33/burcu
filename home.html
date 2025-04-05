@@ -43,9 +43,26 @@
 
   <!-- 🛠 Carousel control -->
   <script>
+  document.addEventListener('DOMContentLoaded', function () {
     const carouselWrapper = document.querySelector('.carousel-wrapper');
     const leftButton = document.querySelector('.carousel-button.left');
     const rightButton = document.querySelector('.carousel-button.right');
+
+    function startAutoScroll() {
+      return setInterval(() => {
+        carouselWrapper.scrollBy({ left: 1, behavior: 'auto' });
+      }, 30);
+    }
+
+    let scrollInterval = startAutoScroll();
+
+    function pauseScroll() {
+      clearInterval(scrollInterval);
+    }
+
+    function resumeScroll() {
+      scrollInterval = startAutoScroll();
+    }
 
     leftButton.addEventListener('click', () => {
       carouselWrapper.scrollBy({ left: -300, behavior: 'smooth' });
@@ -55,18 +72,17 @@
       carouselWrapper.scrollBy({ left: 300, behavior: 'smooth' });
     });
 
-    function autoScroll() {
-      carouselWrapper.scrollBy({ left: 1, behavior: 'auto' });
-    }
+    // Pause when hovering over the carousel area
+    carouselWrapper.addEventListener('mouseover', pauseScroll);
+    carouselWrapper.addEventListener('mouseout', resumeScroll);
 
-    let scrollInterval = setInterval(autoScroll, 30);
+    // Pause when hovering over the buttons too!
+    leftButton.addEventListener('mouseover', pauseScroll);
+    leftButton.addEventListener('mouseout', resumeScroll);
 
-    carouselWrapper.addEventListener('mouseover', () => {
-      clearInterval(scrollInterval);
-    });
+    rightButton.addEventListener('mouseover', pauseScroll);
+    rightButton.addEventListener('mouseout', resumeScroll);
+  });
+</script>
 
-    carouselWrapper.addEventListener('mouseout', () => {
-      scrollInterval = setInterval(autoScroll, 30);
-    });
-  </script>
 </body>
