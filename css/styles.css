@@ -454,7 +454,7 @@ body, html {
 .speech-bubble-link {
   position: absolute;
   top: 18%;
-  left: 40%;
+  left: 30%;
   width: 80px;
   height: auto;
   cursor: pointer;
