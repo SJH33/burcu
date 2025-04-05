@@ -587,7 +587,7 @@ body.landing-page {
 
 @media (max-width: 480px) {
   .flower {
-    width: 100px; /* smaller flowers on phones */
+    width: 150px; /* smaller flowers on phones */
   }
 }
 
