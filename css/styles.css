@@ -67,12 +67,7 @@ body.landing-page {
   transform: scale(1.1);
 }
 
-/* Responsive Speech Bubble Size */
-@media (max-width: 768px) {
-  .speech-bubble-link img {
-    width: 50px;
-  }
-}
+
 
 /* Flowers */
 .flower {
