@@ -599,6 +599,7 @@ nav {
 }
 
 /* Footer */
+/* Footer */
 footer {
   background-color: #f3d6c1; /* 🧡 Match navbar */
   text-align: center;
@@ -608,6 +609,15 @@ footer {
   flex-shrink: 0; /* ⚡️ Prevent footer from shrinking */
   width: 100%;
 }
+
+/* 🛠️ Footer: Thinner on small screens */
+@media (max-width: 480px) {
+  footer {
+    padding: 0.5rem; /* 📱 Less padding on phones */
+    font-size: 0.8rem; /* 📱 Slightly smaller text */
+  }
+}
+
 
 /* Make the whole page layout flexbox */
 body, html {
