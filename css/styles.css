@@ -587,3 +587,38 @@ nav {
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
+
+/* Sticky Navbar */
+nav {
+  background-color: #f3d6c1; /* 🧡 Same background as footer */
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Make sure it stays on top */
+}
+
+/* Footer */
+footer {
+  background-color: #f3d6c1; /* 🧡 Match navbar */
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  flex-shrink: 0; /* ⚡️ Prevent footer from shrinking */
+  width: 100%;
+}
+
+/* Make the whole page layout flexbox */
+body, html {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content takes all available space */
+.page-wrapper, main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
