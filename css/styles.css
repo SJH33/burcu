@@ -548,3 +548,16 @@ footer {
   max-height: 500px; /* enough to show all links */
   opacity: 1;
 }
+
+body {
+  padding-top: 80px; /* 👈 match navbar height */
+  padding-bottom: 60px; /* 👈 match footer height */
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 100px; /* for taller mobile navbar */
+    padding-bottom: 70px; /* for mobile footer space */
+  }
+}
+
