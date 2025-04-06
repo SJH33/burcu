@@ -348,7 +348,7 @@ nav {
 .gallery-filters {
   position: sticky;
   top: 90px;
-  background-color: #fffaf5;
+  background-color: #42745B;
   z-index: 10;
   display: flex;
   flex-wrap: wrap;
