@@ -20,10 +20,20 @@
         const navLinks = document.getElementById('nav-links');
       
         hamburger.addEventListener('click', () => {
-          hamburger.classList.toggle('active'); // 👈 Add this
+          hamburger.classList.toggle('active');
           navLinks.classList.toggle('show');
         });
+      
+        // 🌟 NEW: Close menu when a link is clicked
+        const allNavLinks = document.querySelectorAll('#nav-links li a');
+        allNavLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('show');
+          });
+        });
       </script>
+
 
 
    </body>
