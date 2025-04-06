@@ -479,3 +479,16 @@ nav ul li.social-link img:hover {
 .lightbox-button:hover {
   background: rgba(255,255,255,1);
 }
+
+@media (max-width: 480px) {
+  .floating-instagram,
+  .floating-tiktok {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .floating-instagram,
+  .floating-tiktok {
+    display: none;
+  }
+}
