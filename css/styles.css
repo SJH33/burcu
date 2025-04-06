@@ -201,6 +201,21 @@ nav {
 }
 
 /* Responsive Nav */
+/* Smooth transition for mobile nav menu */
+@media (max-width: 768px) {
+  .nav-links {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+
+  /* When hamburger is active */
+  .nav-links.show {
+    max-height: 500px; /* enough to show all links */
+    opacity: 1;
+  }
+}
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
