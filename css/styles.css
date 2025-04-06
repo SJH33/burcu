@@ -524,3 +524,17 @@ footer {
   flex-shrink: 0;
   width: 100%;
 }
+
+/* Smooth transition for mobile nav menu */
+.nav-links {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+/* When hamburger is active */
+.nav-links.show {
+  max-height: 500px; /* enough to show all links */
+  opacity: 1;
+}
