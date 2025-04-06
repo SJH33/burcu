@@ -94,19 +94,15 @@ body.landing-page {
 }
 
 /* 🖼️ Navbar */
-/* Navbar Fixed */
 nav {
   background-color: #f3d6c1;
   padding: 0.5rem 2rem;
-  position: fixed; /* 🔥 fixed instead of sticky */
+  position: fixed; /* 🔥 fixed */
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
 }
-
-
-
 
 .nav-container {
   display: flex;
@@ -201,21 +197,6 @@ nav {
 }
 
 /* Responsive Nav */
-/* Smooth transition for mobile nav menu */
-@media (max-width: 768px) {
-  .nav-links {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
-  }
-
-  /* When hamburger is active */
-  .nav-links.show {
-    max-height: 500px; /* enough to show all links */
-    opacity: 1;
-  }
-}
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -317,7 +298,7 @@ nav {
 .art-piece {
   position: relative;
   width: 100%;
-  padding-top: 70%; /* 🖼 Shrink vertical height */
+  padding-top: 70%; /* Shrink vertical */
   background-color: #fff;
   border: 4px solid #e0c7b7;
   border-radius: 12px;
@@ -328,7 +309,6 @@ nav {
   animation: fadeInUp 1s ease forwards;
   animation-delay: var(--delay, 0s);
 }
-
 
 .art-piece img {
   position: absolute;
@@ -536,7 +516,6 @@ nav {
 }
 
 /* 🌿 Footer */
-/* Footer Fixed */
 footer {
   background-color: #f3d6c1;
   text-align: center;
@@ -550,29 +529,15 @@ footer {
   z-index: 1000;
 }
 
-/* Smooth transition for mobile nav menu */
-.nav-links {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-  opacity: 0;
-}
-
-/* When hamburger is active */
-.nav-links.show {
-  max-height: 500px; /* enough to show all links */
-  opacity: 1;
-}
-
+/* Responsive Adjustments */
 body {
-  padding-top: 80px; /* 👈 match navbar height */
-  padding-bottom: 60px; /* 👈 match footer height */
+  padding-top: 80px; /* match navbar height */
+  padding-bottom: 60px; /* match footer height */
 }
 
 @media (max-width: 480px) {
   body {
-    padding-top: 100px; /* for taller mobile navbar */
-    padding-bottom: 70px; /* for mobile footer space */
+    padding-top: 100px;
+    padding-bottom: 70px;
   }
 }
-
