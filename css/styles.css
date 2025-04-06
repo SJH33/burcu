@@ -94,14 +94,19 @@ body.landing-page {
 }
 
 /* 🖼️ Navbar */
+/* Navbar Fixed */
 nav {
   background-color: #f3d6c1;
   padding: 0.5rem 2rem;
-  position: sticky;
+  position: fixed; /* 🔥 fixed instead of sticky */
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
 }
+
+
+
 
 .nav-container {
   display: flex;
@@ -516,14 +521,18 @@ nav {
 }
 
 /* 🌿 Footer */
+/* Footer Fixed */
 footer {
   background-color: #f3d6c1;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
   color: #666;
-  flex-shrink: 0;
+  position: fixed; /* 🔥 fixed footer */
+  bottom: 0;
+  left: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 /* Smooth transition for mobile nav menu */
