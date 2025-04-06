@@ -1,14 +1,14 @@
-/* Base Styles */
+/* Base Reset */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: 'Quicksand', sans-serif;
-  background-color: #42745B; /* Landing page background */
+  background-color: #42745B;
   color: #333;
 }
 
-/* Landing Page Specific */
+/* 🎨 Landing Page */
 body.landing-page {
   background-color: #42745B;
 }
@@ -27,7 +27,6 @@ body.landing-page {
   height: 100%;
 }
 
-/* Landing Image */
 .landing-image {
   position: absolute;
   bottom: 0;
@@ -43,13 +42,12 @@ body.landing-page {
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-/* Speech Bubble */
+/* 🗨️ Speech Bubble */
 .speech-bubble-link {
   position: absolute;
   top: 5%;
   left: 25%;
   width: 100px;
-  height: auto;
   cursor: pointer;
   opacity: 0;
   animation: fadeInBubble 2s ease 1.5s forwards, float 3s ease-in-out infinite 3.5s;
@@ -65,11 +63,10 @@ body.landing-page {
   transform: scale(1.1);
 }
 
-/* Flowers */
+/* 🌸 Flowers */
 .flower {
   position: absolute;
   width: 300px;
-  height: auto;
   pointer-events: none;
 }
 
@@ -96,33 +93,25 @@ body.landing-page {
   }
 }
 
-/* Header */
+/* 🖼️ Header + Navbar */
 header {
-  background-color: #f7e8d5;
-  height: 100px; /* 🎯 Fixed height, adjust slightly if needed */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1rem; /* Only horizontal padding */
-}
-.logo {
-  max-height: 100px; /* 🎯 Logo fits inside the 80px header */
-  width: auto;
+  display: none; /* No separate header, logo inside nav */
 }
 
-
-
-/* Navigation */
 nav {
   background-color: #f3d6c1;
   padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  align-items: center;      /* Center items vertically */
-  justify-content: flex-start; /* 👈 Move everything to the LEFT */
+  align-items: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
   margin: 0;
@@ -134,18 +123,17 @@ nav li {
   align-items: center;
 }
 
-/* ✨ Logo Styling */
 nav li.logo img {
-  height: 70px; /* 🎯 Bigger logo size */
+  height: 70px;
   width: auto;
 }
 
 nav a {
   text-decoration: none;
   color: #444;
-  font-weight: bold;
   font-family: 'Amatic SC', cursive;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
   transition: color 0.2s;
 }
 
@@ -153,75 +141,7 @@ nav a:hover {
   color: #d06224;
 }
 
-/* Navbar Overall */
-nav {
-  background-color: #f3d6c1;
-  padding: 0.5rem 1rem;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 999; /* 👈 stay on top while scrolling */
-}
-
-/* Flex container inside nav */
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Logo Styling */
-.logo img {
-  height: 60px;
-  width: auto;
-}
-
-/* Navigation Links */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-links li {
-  display: flex;
-  align-items: center;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #444;
-  font-family: 'Amatic SC', cursive;
-  font-size: 1.8rem;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #d06224;
-}
-
-/* Social Icons */
-.social-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-links img {
-  width: 30px;
-  height: 30px;
-  transition: opacity 0.3s;
-}
-
-.social-links img:hover {
-  opacity: 0.7;
-}
-
-
-/* Social Icons */
+/* 📱 Social Links */
 nav ul li.social-link img {
   width: 28px;
   height: 28px;
@@ -232,35 +152,33 @@ nav ul li.social-link img:hover {
   opacity: 0.7;
 }
 
-
-/* Social Icons inside Nav */
-nav ul li.social-link {
-  display: inline-block;
-  margin-left: 1.5rem;
-  vertical-align: middle;
+/* 🌿 Floating Instagram and TikTok */
+.floating-instagram, .floating-tiktok {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  z-index: 999;
 }
 
-nav ul li.social-link img {
-  width: 28px;
-  height: 28px;
-  vertical-align: middle;
-  transition: opacity 0.3s;
+.floating-instagram {
+  bottom: 20px;
+  right: 20px;
 }
 
-nav ul li.social-link img:hover {
-  opacity: 0.7;
+.floating-tiktok {
+  bottom: 90px;
+  right: 20px;
 }
 
-/* Global Image Control */
-img {
-  max-width: 900px;
-  height: auto;
-  display: block;
+.floating-instagram:hover, .floating-tiktok:hover {
+  transform: scale(1.1);
 }
 
-
-/* Gallery for Home Page */
-/* 🎨 Gallery Page Styles */
+/* 🌟 Gallery Section */
 .gallery-section {
   max-width: 90vw;
   margin: 3rem auto;
@@ -268,59 +186,51 @@ img {
 }
 
 .gallery-section h1 {
+  text-align: center;
   font-family: 'Amatic SC', cursive;
   font-size: 2.5rem;
   color: #d06224;
   margin-bottom: 2rem;
-  text-align: center;
 }
 
-/* 🖼 Grid Layout */
+/* 🎯 Gallery Grid */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 🎯 Default: 4 images per row */
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
-/* 🛜 Tablet screens */
 @media (max-width: 1024px) {
   .gallery-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 images per row on tablets */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-
-/* 📱 Smaller tablets and big phones */
 @media (max-width: 768px) {
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* 📱 Mobile phones */
 @media (max-width: 480px) {
   .gallery-grid {
-    grid-template-columns: 1fr; /* 1 image per row on phones */
+    grid-template-columns: 1fr;
   }
 }
 
-
-
-
-
-
-
-
-
-/* 🎯 Each Art Piece */
+/* 🖼️ Each Art Piece */
 .art-piece {
   position: relative;
   width: 100%;
-  padding-top: 150%; /* 🎯 Makes it taller than wide (vertical phone shape) */
-  overflow: hidden;
-  border: 4px solid #e0c7b7;
+  padding-top: 130%; /* Vertical shape */
   background-color: #fff;
+  border: 4px solid #e0c7b7;
+  border-radius: 12px;
+  overflow: hidden;
   transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: var(--delay, 0s);
 }
 
 .art-piece img {
@@ -329,23 +239,39 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 🎯 fills frame nicely */
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-
-
-
-/* 🎯 Hover effect */
 .art-piece:hover {
   transform: scale(1.03);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+/* ✨ Hover Caption */
+.hover-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5rem;
+  color: #d06224;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.art-piece:hover .hover-caption {
+  opacity: 1;
+}
+
 /* 🎯 Filter Buttons */
 .gallery-filters {
   position: sticky;
-  top: 80px; /* adjust depending on your navbar height */
-  background-color: #fffaf5; /* match your page background */
+  top: 90px; /* adjust if navbar size changes */
+  background-color: #fffaf5;
   z-index: 10;
   display: flex;
   flex-wrap: wrap;
@@ -356,7 +282,6 @@ img {
   border-bottom: 2px solid #eee;
 }
 
-
 .gallery-filters button {
   background-color: #f7e8d5;
   color: #444;
@@ -366,73 +291,44 @@ img {
   padding: 0.5rem 1rem;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, transform 0.1s ease;
 }
 
 .gallery-filters button:hover {
   background-color: #f3d6c1;
+  transform: scale(1.05);
 }
 
 .gallery-filters button.active {
   background-color: #d06224;
   color: #fffaf5;
+  transform: scale(0.95);
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #f3d6c1;
-  font-size: 0.9rem;
-  color: #666;
+/* 🌟 Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Floating Instagram Button */
-.floating-instagram {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  background-color: transparent;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
+@keyframes pulseGlow {
+  0% {
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 35px rgba(255,255,255,0.9));
+  }
+  100% {
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.6));
+  }
 }
 
-.floating-instagram img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.floating-instagram:hover {
-  transform: scale(1.1);
-}
-
-/* 🌟 New: Floating TikTok Button */
-.floating-tiktok {
-  position: fixed;
-  bottom: 90px; /* 👈 Higher than Instagram (Instagram is 20px) */
-  right: 20px;
-  z-index: 999;
-  background-color: transparent;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-.floating-tiktok img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.floating-tiktok:hover {
-  transform: scale(1.1);
-}
-
-
-/* Animations */
 @keyframes fadeInBubble {
   0% {
     opacity: 0;
@@ -456,57 +352,7 @@ footer {
   }
 }
 
-@keyframes pulseGlow {
-  0% {
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
-  }
-  50% {
-    filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.9));
-  }
-  100% {
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
-  }
-}
-
-/* Page Fade In */
-.page-wrapper {
-  animation: fadeIn 2s ease forwards;
-  opacity: 0;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Whole Page Setup */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Quicksand', sans-serif;
-  background-color: #42745B;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Make sure the page wrapper flexes */
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* 👈 minimum 100% of the view height */
-}
-
-/* Main content takes all available space between header and footer */
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* center vertically if you want */
-}
-
-/* Carousel Section */
+/* 🎬 Carousel Section (Home Page) */
 .carousel-container {
   position: relative;
   overflow: hidden;
@@ -515,17 +361,22 @@ main {
   padding: 2rem 0;
 }
 
-/* New wrapper: scrollable */
 .carousel-wrapper {
   overflow-x: scroll;
   scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .carousel-track {
   display: flex;
-  width: max-content; /* 👈 images spread wide */
+  width: max-content;
+  animation: scroll 40s linear infinite;
 }
-
 
 .carousel-track img {
   width: 200px;
@@ -536,13 +387,16 @@ main {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+.carousel-container:hover .carousel-track {
+  animation-play-state: paused;
+}
 
-/* Arrows */
+/* 🔥 Arrows */
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255,255,255,0.7);
   border: none;
   font-size: 2rem;
   padding: 0.5rem 1rem;
@@ -550,7 +404,6 @@ main {
   z-index: 10;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: background-color 0.3s;
 }
 
 .carousel-button.left {
@@ -562,10 +415,9 @@ main {
 }
 
 .carousel-button:hover {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255,255,255,1);
 }
 
-/* Keyframes */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -575,52 +427,15 @@ main {
   }
 }
 
-/* NEW: Pause scroll on hover on entire container */
-.carousel-container:hover .carousel-track {
-  animation-play-state: paused;
-}
-
-.carousel-wrapper {
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  
-  /* 🔥 Hide scrollbar */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-}
-
-.carousel-wrapper::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
-
-.fade-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 60px; /* How much to fade */
-  pointer-events: none; /* Don't block clicks on arrows */
-  z-index: 5;
-}
-
-.fade-overlay.left {
-  left: 0;
-  background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0) 100%);
-}
-
-.fade-overlay.right {
-  right: 0;
-  background: linear-gradient(to left, #fff 0%, rgba(255,255,255,0) 100%);
-}
-
-/* Lightbox Styles */
+/* 🖼️ Lightbox for clicking images (optional) */
 .lightbox {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* dark overlay */
+  background-color: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -630,7 +445,7 @@ main {
   max-width: 80%;
   max-height: 80%;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
 
 .close-lightbox {
@@ -652,7 +467,6 @@ main {
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 50%;
-  z-index: 1001;
 }
 
 .lightbox-button.left {
@@ -666,113 +480,3 @@ main {
 .lightbox-button:hover {
   background: rgba(255,255,255,1);
 }
-
-.lightbox {
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.gallery-filters button.active {
-  background-color: #d06224;
-  color: #fffaf5;
-  border: 1px solid #d06224;
-}
-
-/* 🌟 Fade-in Animation */
-.art-piece {
-  opacity: 0;
-  transform: translateY(20px); /* start slightly lower */
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: var(--delay, 0s); /* individual delay if you want */
-}
-
-.art-piece:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Keyframes for Fade-In + Up */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.gallery-filters button {
-  background-color: #f7e8d5;
-  color: #444;
-  border: 2px solid #d06224;
-  font-family: 'Amatic SC', cursive;
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease, transform 0.1s ease; /* 👈 added transform */
-}
-
-.gallery-filters button:hover {
-  background-color: #f3d6c1;
-  transform: scale(1.05); /* 👈 gently grow on hover */
-}
-
-/* When Active (selected) */
-.gallery-filters button.active {
-  background-color: #d06224;
-  color: #fffaf5;
-  border: 1px solid #d06224;
-  transform: scale(0.95); /* 👈 gently press down when active */
-}
-
-.art-piece {
-  position: relative;
-  width: 100%;
-  padding-top: 100%;
-  background-color: #fff;
-  border: 4px solid #e0c7b7;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.art-piece img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.hover-caption {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0.5rem;
-  background: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  font-family: 'Amatic SC', cursive;
-  font-size: 1.5rem;
-  color: #d06224;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* ✨ Show caption only on hover */
-.art-piece:hover .hover-caption {
-  opacity: 1;
-}
-
