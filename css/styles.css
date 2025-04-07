@@ -368,12 +368,15 @@ footer {
 /* About Section */
 .about-section {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 40px auto;
+  flex-direction: column; /* Stack vertically */
   align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 800px;
+  width: 100%;
+  color: white;
 }
+
 
 .about-image img {
   max-width: 350px;
