@@ -437,10 +437,11 @@ footer {
 
 
 .shop-item h3 {
+  font-size: 1.1rem;
   padding: 1rem;
-  font-size: 1.2rem;
   color: #333;
 }
+
 
 /* Animations */
 @keyframes fadeIn {
