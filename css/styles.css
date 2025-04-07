@@ -406,7 +406,13 @@ footer {
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  max-width: 300px;
+  max-height: 80vh; /* 👈 LIMIT based on screen height */
+  display: flex;
+  flex-direction: column;
 }
+
 
 .shop-item:hover {
   transform: translateY(-5px);
