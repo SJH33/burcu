@@ -421,11 +421,12 @@ footer {
 
 .image-wrapper {
   width: 100%;
-  aspect-ratio: 1/1.2;
-  background: #f0f0f0;
+  flex-grow: 1;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #f0f0f0;
 }
 
 .image-wrapper img {
@@ -433,6 +434,7 @@ footer {
   height: 100%;
   object-fit: cover;
 }
+
 
 .shop-item h3 {
   padding: 1rem;
