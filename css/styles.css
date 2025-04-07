@@ -139,8 +139,18 @@ nav {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap; /* Ensure items wrap in mobile view */
+  gap:1rem;
+  justify-content: center; /* Align items in the center */
 }
+
+.nav-links {
+  display: flex;
+ 
+  gap: 1rem; /* Spacing between items */
+  justify-content: center; /* Align items in the center */
+}
+
 
 .nav-links a {
   text-decoration: none;
