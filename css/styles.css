@@ -490,3 +490,16 @@ footer p {
   }
 }
 
+
+.logo-text {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.5rem; /* Make it nice and big */
+  font-weight: bold;
+  color: #f7e8d5; /* Light peachy color */
+  text-decoration: none; /* 🚫 Remove underline */
+}
+
+.logo-text:hover {
+  color: #FF886B; /* Coral pink on hover */
+}
+
