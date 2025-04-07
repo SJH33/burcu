@@ -117,7 +117,7 @@ html, body {
 
 /* Navbar */
 nav {
-  background-color: rgba(168, 195, 179, 0.9); /* Semi-transparent nav */
+  background-color: rgba(123, 163, 146, 0.9); /* Semi-transparent nav */
   padding: 0.5rem 2rem;
   position: fixed;
   top: 0;
@@ -342,7 +342,7 @@ main {
 
 /* Footer */
 footer {
-  background-color: rgba(243, 214, 193, 0.9);
+  background-color: rgba(123, 163, 146, 0.9);
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
