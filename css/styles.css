@@ -127,11 +127,16 @@ html, body {
 }
 
 /* Navbar */
+
+
+
 nav {
   background-color: rgba(123, 163, 146, 0.9); /* Semi-transparent nav */
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 1000;
   display: flex;
