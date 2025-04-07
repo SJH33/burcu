@@ -141,9 +141,8 @@ nav {
   font-size: 2rem;
   transition: color 0.2s;
 }
-
 .nav-links a i {
-  font-size: 2rem;  /* Icon size */
+  font-size: 3rem; /* Make icons bigger */
 }
 
 .nav-links a:hover {
