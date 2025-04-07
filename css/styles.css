@@ -503,3 +503,23 @@ footer p {
   color: #FF886B; /* Coral pink on hover */
 }
 
+.social-links {
+  display: flex;
+  align-items: center; /* 👈 fixes vertical alignment */
+  gap: 1rem;
+}
+
+.connect-with-me {
+  margin: 0; /* reset default margin on <p> */
+  font-size: 0.9rem;
+}
+
+.social-media-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-media-icons img {
+  width: 28px;
+  height: 28px;
+}
