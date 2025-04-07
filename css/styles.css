@@ -128,6 +128,7 @@ nav {
   align-items: center;
 }
 
+/* 📝 Base Styles */
 .nav-links {
   list-style: none;
   display: flex;
@@ -141,38 +142,48 @@ nav {
   font-size: 2rem;
   transition: color 0.2s;
 }
+
 .nav-links a i {
   font-size: 3rem; /* Make icons bigger */
+}
+
+/* Show icons only in mobile screens */
+@media (max-width: 768px) {
+  .nav-links a {
+    display: none; /* Hide text links */
+  }
+
+  .nav-links a i {
+    display: inline-block; /* Show only icons */
+    font-size: 3rem; /* Ensure the icon is big enough */
+  }
+}
+
+/* Show text on larger screens */
+@media (min-width: 769px) {
+  .nav-links a {
+    display: inline-block; /* Ensure links show on larger screens */
+  }
+
+  .nav-links a i {
+    display: none; /* Hide icons on larger screens */
+  }
+}
+
+/* For smaller mobile screens, you can make adjustments to icon size */
+@media (max-width: 480px) {
+  .nav-links a {
+    font-size: 1.5rem; /* Adjust the text size for smaller screens */
+  }
+
+  .nav-links a i {
+    font-size: 2rem; /* Adjust icon size for very small screens */
+  }
 }
 
 .nav-links a:hover {
   color: #FF886B; /* Coral hover */
 }
-
-/* Mobile layout adjustments */
-@media (max-width: 768px) {
-  .nav-links {
-    display: flex; /* Ensure links are displayed */
-    justify-content: center; /* Center the items */
-    align-items: center;
-    gap: 2rem;  /* Add some spacing between the icons */
-  }
-
-  .nav-links a {
-    font-size: 2.5rem;  /* Increase the size of the icons */
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-links {
-    gap: 1.5rem; /* Reduce space between icons on very small screens */
-  }
-
-  .nav-links a {
-    font-size: 2rem;  /* Adjust icon size on small screens */
-  }
-}
-
 
 
 
