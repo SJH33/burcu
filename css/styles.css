@@ -190,9 +190,14 @@ nav {
 /* Main Sections */
 main {
   flex: 1;
-  padding-top: 120px;
-  padding-bottom: 80px;
+  display: flex;
+  align-items: center;   /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  padding-top: 120px;    /* Space for navbar */
+  padding-bottom: 80px;  /* Space for footer */
+  text-align: center;    /* Center text */
 }
+
 
 /* Carousel */
 .carousel-container {
