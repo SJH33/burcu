@@ -382,7 +382,9 @@ footer {
   max-width: 350px;
   width: 100%;
   border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
+
 
 .about-text h1 {
   font-family: 'Amatic SC', cursive;
