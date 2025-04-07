@@ -1,52 +1,22 @@
-   <footer>
-   <div class="copyright">
-     <p>© 2025 Burcu Meric. All rights reserved.</p>
-   
-      <!-- Social Links -->
+<footer>
+  <div class="footer-container">
+    <div class="copyright">
+      <p>© 2025 Burcu Meric. All rights reserved.</p>
+    </div>
+
     <div class="social-links">
-      <div class="connect-with-me">
-         <p>Connect with me: </p>
-      </div>
+      <p class="connect-with-me">Connect with me:</p>
       <div class="social-media-icons">
-         <a href="mailto:email@email.com" target="_blank" aria-label="Email">
-           <img src="images/email_watercolor.png" alt="Email" />
-         </a>
-         <a href="https://www.instagram.com/mombaba_illustrations/" target="_blank" aria-label="Instagram">
-           <img src="images/instagram_watercolor.png" alt="Instagram" />
-         </a>
-         <a href="https://www.tiktok.com/@mombaba_illustrations" target="_blank" aria-label="TikTok">
-           <img src="images/tiktok_watercolor.png" alt="TikTok" />
-         </a>
+        <a href="mailto:email@email.com" target="_blank" aria-label="Email">
+          <img src="images/email_watercolor.png" alt="Email" />
+        </a>
+        <a href="https://www.instagram.com/mombaba_illustrations/" target="_blank" aria-label="Instagram">
+          <img src="images/instagram_watercolor.png" alt="Instagram" />
+        </a>
+        <a href="https://www.tiktok.com/@mombaba_illustrations" target="_blank" aria-label="TikTok">
+          <img src="images/tiktok_watercolor.png" alt="TikTok" />
+        </a>
       </div>
-   </div>
-   </footer>
-      
-      <!-- JS Scripts -->
-      <script src="js/main.js"></script>
-      <script src="js/gallery-filter.js"></script>
-      
-      
-      <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
-      
-        hamburger.addEventListener('click', () => {
-          hamburger.classList.toggle('active');
-          navLinks.classList.toggle('show');
-        });
-      
-        // 🌟 NEW: Close menu when a link is clicked
-        const allNavLinks = document.querySelectorAll('#nav-links li a');
-        allNavLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('show');
-          });
-        });
-      </script>
-      
-
-
-
-   </body>
-</html>
+    </div>
+  </div>
+</footer>
