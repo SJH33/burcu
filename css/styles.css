@@ -1,3 +1,105 @@
+/* 🎨 Landing Page */
+body.landing-page {
+  background-color: #42745B;
+}
+
+.landing-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.landing-image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  padding: 0;
+  filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.9));
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* 🗨️ Speech Bubble */
+.speech-bubble-link {
+  position: absolute;
+  top: 5%;
+  left: 25%;
+  width: 100px;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeInBubble 2s ease 1.5s forwards, float 3s ease-in-out infinite 3.5s;
+}
+
+.speech-bubble-link img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.speech-bubble-link:hover {
+  transform: scale(1.1);
+}
+
+/* 🌸 Flowers */
+.flower {
+  position: absolute;
+  width: 300px;
+  pointer-events: none;
+}
+
+.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .flower {
+    width: 200px;
+  }
+}
+@media (max-width: 480px) {
+  .flower {
+    width: 150px;
+  }
+}
+
+/* Landing Animations */
+@keyframes pulseGlow {
+  0% { filter: drop-shadow(0 0 20px rgba(255,255,255,0.6)); }
+  50% { filter: drop-shadow(0 0 35px rgba(255,255,255,0.9)); }
+  100% { filter: drop-shadow(0 0 20px rgba(255,255,255,0.6)); }
+}
+
+@keyframes fadeInBubble {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
+
 /* Base Reset */
 html, body {
   margin: 0;
