@@ -123,18 +123,9 @@ nav {
   top: 0;
   width: 100%;
   z-index: 1000;
-}
-
-.nav-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.logo img {
-  height: 70px;
+  align-items: center;
 }
 
 .nav-links {
@@ -148,13 +139,58 @@ nav {
   color: #f7e8d5;
   font-family: 'Amatic SC', cursive;
   font-size: 2rem;
-  font-weight: bold;
   transition: color 0.2s;
+}
+
+.nav-links a i {
+  font-size: 2rem;  /* Icon size */
 }
 
 .nav-links a:hover {
   color: #FF886B; /* Coral hover */
 }
+
+/* Mobile layout adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex; /* Ensure links are displayed */
+    justify-content: center; /* Center the items */
+    align-items: center;
+    gap: 2rem;  /* Add some spacing between the icons */
+  }
+
+  .nav-links a {
+    font-size: 2.5rem;  /* Increase the size of the icons */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 1.5rem; /* Reduce space between icons on very small screens */
+  }
+
+  .nav-links a {
+    font-size: 2rem;  /* Adjust icon size on small screens */
+  }
+}
+
+
+
+
+
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 70px;
+}
+
 
 .social-links img {
   width: 28px;
@@ -166,26 +202,7 @@ nav {
   opacity: 0.7;
 }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
 
-.hamburger span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #444;
-  transition: 0.4s;
-}
-
-@media (max-width: 768px) {
-  .hamburger { display: flex; }
-  .nav-links { display: none; flex-direction: column; background: #f7d9c4; }
-  .nav-links.show { display: flex; }
-}
 
 /* Main Sections */
 main {
