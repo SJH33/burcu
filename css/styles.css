@@ -619,3 +619,55 @@ body {
   color: #222;
 }
 
+/* Reset only inside about-section */
+.about-section *, 
+.about-section *::before, 
+.about-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* About Section Layout */
+.about-section {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
+  align-items: center;
+  gap: 40px;
+}
+
+/* Profile Image Styling */
+.about-image {
+  flex: 1 1 300px; /* grow, shrink, minimum width 300px */
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Text Styling */
+.about-text {
+  flex: 2 1 400px; /* larger flex for text */
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.6;
+}
