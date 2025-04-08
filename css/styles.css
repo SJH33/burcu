@@ -279,6 +279,17 @@ nav {
   scroll-snap-align: center;
 }
 
+.carousel-track img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-track img:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* stronger glow, no jump */
+}
+
+}
+
+
 /* 🎯 Carousel Buttons */
 .carousel-button {
   position: absolute;
