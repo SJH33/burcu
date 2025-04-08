@@ -78,6 +78,11 @@ body.landing-page {
 .speech-bubble-link:hover {
   transform: scale(1.1);
 }
+@keyframes fadeInBubble {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 
 /* 🌸 Decorative Flowers */
 .flower {
