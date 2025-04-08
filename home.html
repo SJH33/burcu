@@ -186,6 +186,13 @@
         }
       });
     });
+
+        // Hide carousel buttons when lightbox opens
+    document.querySelectorAll('.carousel-button').forEach(btn => btn.style.display = 'none');
+    
+    // Show carousel buttons when lightbox closes
+    document.querySelectorAll('.carousel-button').forEach(btn => btn.style.display = '');
+
   </script>
 
 </body>
