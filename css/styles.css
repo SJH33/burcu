@@ -300,37 +300,39 @@ main {
 .carousel-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center; /* 👈 center vertically */
+  align-items: center;
   overflow-x: auto;
   padding: 2rem 0;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  height: calc(100vh - var(--nav-height) - var(--footer-height)); /* 👈 full space between nav and footer */
+  height: calc(100vh - var(--nav-height) - var(--footer-height));
 }
 
-
 .carousel-wrapper::-webkit-scrollbar {
-  display: none; /* Hide scrollbar in Chrome/Safari */
+  display: none;
 }
 
 .carousel-track {
   display: flex;
   flex-wrap: nowrap;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 2rem; /* slight more gap helps stop flickering */
 }
 
 
 .carousel-track img {
   flex: 0 0 auto;
-  height: 70vh; /* 70% of the screen height */
-  width: auto; /* keep natural width */
-  max-width: 90vw; /* don't let it overflow screen */
-  object-fit: contain; /* show full image nicely */
+  height: 70vh; /* 70% of screen height */
+  width: auto;  /* natural width */
+  max-width: 80vw; /* never overflow screen */
+  min-width: 300px; /* 👈 force a minimum width so it's not tiny */
+  object-fit: cover; /* crop if needed nicely */
   border-radius: 20px;
   border: 5px solid #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  scroll-snap-align: center; /* snap image into center view */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  scroll-snap-align: center;
 }
+
 
 
 
