@@ -38,6 +38,7 @@
             <img src="images/burcu_art9.jpg" alt="Art 9" />
             <img src="images/burcu_art10.jpg" alt="Art 10" />
 
+            <!-- Clones for Infinite Loop -->
             <img src="images/burcu_art1.jpg" alt="Art 1 clone" />
             <img src="images/burcu_art2.jpg" alt="Art 2 clone" />
             <img src="images/burcu_art3.jpg" alt="Art 3 clone" />
@@ -70,60 +71,61 @@
   <script src="js/include.js"></script>
 
   <!-- 🛠 Carousel Scroll Controls -->
-window.addEventListener('load', function () {
-  const carouselWrapper = document.querySelector('.carousel-wrapper');
-  const carouselTrack = document.querySelector('.carousel-track');
-  const leftButton = document.querySelector('.carousel-button.left');
-  const rightButton = document.querySelector('.carousel-button.right');
+  <script>
+    window.addEventListener('load', function () {
+      const carouselWrapper = document.querySelector('.carousel-wrapper');
+      const carouselTrack = document.querySelector('.carousel-track');
+      const leftButton = document.querySelector('.carousel-button.left');
+      const rightButton = document.querySelector('.carousel-button.right');
 
-  let scrollInterval;
-  const scrollSpeed = 1.5; // How fast to scroll
-  let cloneWidth = 0; // Total width of cloned images
+      let scrollInterval;
+      const scrollSpeed = 1.5; // how fast to scroll
+      let cloneWidth = 0;
 
-  function calculateCloneWidth() {
-    const clones = carouselTrack.querySelectorAll('img[alt$="clone"]');
-    cloneWidth = 0;
-    clones.forEach(clone => {
-      cloneWidth += clone.offsetWidth + 32; // 32px gap (2rem)
-    });
-  }
-
-  function startAutoScroll() {
-    carouselWrapper.style.scrollSnapType = 'none'; // Turn off snap
-    scrollInterval = setInterval(() => {
-      carouselWrapper.scrollLeft += scrollSpeed;
-
-      if (carouselWrapper.scrollLeft >= (carouselTrack.scrollWidth - carouselWrapper.clientWidth - cloneWidth)) {
-        // Smooth reset without flicker
-        carouselWrapper.scrollLeft = 0;
+      function calculateCloneWidth() {
+        const clones = carouselTrack.querySelectorAll('img[alt$="clone"]');
+        cloneWidth = 0;
+        clones.forEach(clone => {
+          cloneWidth += clone.offsetWidth + 32; // 32px = 2rem gap
+        });
       }
-    }, 10);
-  }
 
-  function stopAutoScroll() {
-    clearInterval(scrollInterval);
-    carouselWrapper.style.scrollSnapType = 'x mandatory'; // Turn snap back on
-  }
+      function startAutoScroll() {
+        carouselWrapper.style.scrollSnapType = 'none'; // Disable snap during auto
+        scrollInterval = setInterval(() => {
+          carouselWrapper.scrollLeft += scrollSpeed;
 
-  calculateCloneWidth();
-  startAutoScroll();
+          if (carouselWrapper.scrollLeft >= (carouselTrack.scrollWidth - carouselWrapper.clientWidth - cloneWidth)) {
+            carouselWrapper.scrollLeft = 0; // Reset to start
+          }
+        }, 10);
+      }
 
-  carouselWrapper.addEventListener('mouseenter', stopAutoScroll);
-  carouselWrapper.addEventListener('mouseleave', startAutoScroll);
+      function stopAutoScroll() {
+        clearInterval(scrollInterval);
+        carouselWrapper.style.scrollSnapType = 'x mandatory'; // Re-enable snap
+      }
 
-  leftButton.addEventListener('click', () => {
-    carouselWrapper.scrollBy({ left: -300, behavior: 'smooth' });
-  });
+      calculateCloneWidth();
+      startAutoScroll();
 
-  rightButton.addEventListener('click', () => {
-    carouselWrapper.scrollBy({ left: 300, behavior: 'smooth' });
-  });
+      carouselWrapper.addEventListener('mouseenter', stopAutoScroll);
+      carouselWrapper.addEventListener('mouseleave', startAutoScroll);
 
-  leftButton.addEventListener('mouseenter', stopAutoScroll);
-  leftButton.addEventListener('mouseleave', startAutoScroll);
-  rightButton.addEventListener('mouseenter', stopAutoScroll);
-  rightButton.addEventListener('mouseleave', startAutoScroll);
-});
+      leftButton.addEventListener('click', () => {
+        carouselWrapper.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+
+      rightButton.addEventListener('click', () => {
+        carouselWrapper.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+
+      leftButton.addEventListener('mouseenter', stopAutoScroll);
+      leftButton.addEventListener('mouseleave', startAutoScroll);
+      rightButton.addEventListener('mouseenter', stopAutoScroll);
+      rightButton.addEventListener('mouseleave', startAutoScroll);
+    });
+  </script>
 
   <!-- 🛠 Lightbox Popup Controls -->
   <script>
