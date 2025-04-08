@@ -316,8 +316,10 @@ main {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 2rem; /* slight more gap helps stop flickering */
+  gap: 2rem;
+  min-width: 100%; /* 👈 important for smooth scrolling */
 }
+
 
 
 .carousel-track img {
