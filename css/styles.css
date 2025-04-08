@@ -486,6 +486,14 @@ main {
     right: 5px; /* 📱 Pull closer to center */
   }
 }
+@media (max-width: 480px) {
+  .lightbox-button.left {
+    left: 2px;
+  }
+  .lightbox-button.right {
+    right: 2px;
+  }
+}
 
 
 /* 🙋 About Section */
