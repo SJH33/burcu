@@ -294,15 +294,11 @@ main {
   position: relative;
   width: 100%;
   max-width: 100vw;
-  /* no overflow-x: hidden! */
-  -webkit-overflow-scrolling: touch;
-  padding: 0;
   background-color: #fff;
-  display: block;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 0;
+  display: block; /* keep it block */
 }
+
 
 .carousel-wrapper {
   overflow-x: auto;
