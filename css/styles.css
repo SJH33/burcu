@@ -223,7 +223,7 @@ nav {
 
   .nav-links a i {
     display: inline-block; /* Show icons */
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .nav-links a span {
