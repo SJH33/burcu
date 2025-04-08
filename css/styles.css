@@ -294,8 +294,11 @@ main {
 
 .carousel-track img {
   flex: 0 0 auto;
-  width: 200px;
-  height: 400px;
+ .carousel-track img {
+  width: 60vw; /* 60% of the screen width */
+  height: 70vh; /* 70% of the screen height */
+}
+
   object-fit: cover;
   border-radius: 20px;
   border: 5px solid #fff;
