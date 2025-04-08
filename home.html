@@ -72,28 +72,30 @@ document.addEventListener('DOMContentLoaded', function () {
   const leftButton = document.querySelector('.carousel-button.left');
   const rightButton = document.querySelector('.carousel-button.right');
 
-  function startAutoScroll() {
-    carouselWrapper.style.scrollSnapType = 'none'; // Disable snap
-    return setInterval(() => {
-      carouselWrapper.scrollBy({ left: 2, behavior: 'auto' });
+  let scrollInterval;
 
+  function startAutoScroll() {
+    carouselWrapper.style.scrollSnapType = 'none'; // Turn off snap
+    scrollInterval = setInterval(() => {
+      carouselWrapper.scrollLeft += 1.5; // Small smooth move
       if (carouselWrapper.scrollLeft >= (carouselTrack.scrollWidth - carouselWrapper.clientWidth)) {
         carouselWrapper.scrollLeft = 0;
       }
-    }, 20);
+    }, 10); // Very smooth
   }
 
-  let scrollInterval = startAutoScroll();
-
-  function pauseScroll() {
+  function stopAutoScroll() {
     clearInterval(scrollInterval);
-    carouselWrapper.style.scrollSnapType = 'x mandatory'; // Re-enable snap
+    carouselWrapper.style.scrollSnapType = 'x mandatory'; // Turn snap back on
   }
 
-  function resumeScroll() {
-    scrollInterval = startAutoScroll();
-  }
+  startAutoScroll();
 
+  // Pause auto-scroll on hover
+  carouselWrapper.addEventListener('mouseenter', stopAutoScroll);
+  carouselWrapper.addEventListener('mouseleave', startAutoScroll);
+
+  // Left and right buttons
   leftButton.addEventListener('click', () => {
     carouselWrapper.scrollBy({ left: -300, behavior: 'smooth' });
   });
@@ -102,12 +104,11 @@ document.addEventListener('DOMContentLoaded', function () {
     carouselWrapper.scrollBy({ left: 300, behavior: 'smooth' });
   });
 
-  carouselWrapper.addEventListener('mouseover', pauseScroll);
-  carouselWrapper.addEventListener('mouseout', resumeScroll);
-  leftButton.addEventListener('mouseover', pauseScroll);
-  leftButton.addEventListener('mouseout', resumeScroll);
-  rightButton.addEventListener('mouseover', pauseScroll);
-  rightButton.addEventListener('mouseout', resumeScroll);
+  // Pause scrolling when hovering buttons
+  leftButton.addEventListener('mouseenter', stopAutoScroll);
+  leftButton.addEventListener('mouseleave', startAutoScroll);
+  rightButton.addEventListener('mouseenter', stopAutoScroll);
+  rightButton.addEventListener('mouseleave', startAutoScroll);
 });
 
   <!-- 🛠 Lightbox Popup Controls -->
