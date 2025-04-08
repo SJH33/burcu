@@ -304,11 +304,13 @@ main {
   gap: 1.5rem;
   width: 100%;
   overflow-x: auto;
-  scrollbar-width: none;
+  padding: 2rem 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Hide ugly scrollbar in Firefox */
 }
 
 .carousel-wrapper::-webkit-scrollbar {
-  display: none;
+  display: none; /* Hide scrollbar in Chrome/Safari */
 }
 
 .carousel-track {
@@ -316,6 +318,7 @@ main {
   flex-wrap: nowrap;
   gap: 1.5rem;
 }
+
 
 .carousel-track img {
   flex: 0 0 auto;
