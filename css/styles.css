@@ -2,6 +2,10 @@
 🎨 BURCU ARTIST WEBSITE - FULL CSS
 =============================== */
 
+/* ============================
+🎨 BURCU ARTIST WEBSITE - FULL CSS
+=============================== */
+
 /* 🌐 Base Reset + Global Styles */
 
 :root {
@@ -14,14 +18,6 @@ img {
   padding: 0;
   display: block;
 }
-
-
-main {
-  padding-top: var(--nav-height); /* match navbar height */
-  padding-bottom: var(--footer-height); /* match footer height */
-}
-
-
 
 *,
 *::before,
@@ -42,6 +38,17 @@ html, body {
   min-height: 100vh;
   scroll-behavior: smooth;
   font-size: 1.1rem;
+}
+
+/* 🖼️ Main Sections */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--nav-height);
+  padding-bottom: var(--footer-height);
+  text-align: center;
 }
 
 /* 🎨 Landing Page */
@@ -71,9 +78,6 @@ body.landing-page {
   max-width: 100%;
   height: 80vh;
   object-fit: contain;
-  display: block;
-  margin: 0;
-  padding: 0;
   filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.9));
   animation: pulseGlow 3s ease-in-out infinite;
 }
@@ -92,25 +96,21 @@ body.landing-page {
 .speech-bubble-link img {
   width: 100%;
   height: auto;
-  display: block;
 }
 
 .speech-bubble-link:hover {
   transform: scale(1.1);
 }
+
 @keyframes fadeInBubble {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
 /* 🌸 Decorative Flowers */
 .flower {
@@ -152,38 +152,27 @@ nav {
   justify-content: space-between;
 }
 
-
 .logo-text {
   font-family: 'Amatic SC', cursive;
-  font-size: 2.5rem; /* Big on desktop */
+  font-size: 2.5rem;
   font-weight: bold;
   color: #f7e8d5;
   text-decoration: none;
-  white-space: nowrap; /* Prevent line break */
-  transition: font-size 0.3s ease; /* 👈 Smooth font-size transition */
+  white-space: nowrap;
+  transition: font-size 0.3s ease;
 }
 
 .logo-text:hover {
   color: #FF886B;
 }
 
-/* 📱 On small screens, shrink the logo */
 @media (max-width: 768px) {
-  .logo-text {
-    font-size: 1.8rem; /* Smaller on tablet and phone */
-  }
+  .logo-text { font-size: 1.8rem; }
 }
 
 @media (max-width: 480px) {
-  .logo-text {
-    font-size: 1.5rem; /* Even smaller on tiny phones */
-  }
+  .logo-text { font-size: 1.5rem; }
 }
-
-
-
-
-
 
 .nav-links {
   list-style: none;
@@ -199,7 +188,6 @@ nav {
   align-items: center;
 }
 
-/* 🔔 Link styles */
 .nav-links a {
   display: flex;
   align-items: center;
@@ -214,79 +202,28 @@ nav {
   color: #FF886B;
 }
 
-/* 🖥️ Default (Big Screens) - Show words, hide icons */
-.nav-links a i {
-  display: none; /* Hide icons */
-}
+.nav-links a i { display: none; }
+.nav-links a span { display: inline; }
 
-.nav-links a span {
-  display: inline; /* Show words */
-}
-
-/* 📱 Mobile (Small Screens) - Show icons, hide words */
 @media (max-width: 768px) {
   .nav-links {
-    gap: 1.5rem; /* Optional: tighter spacing on mobile */
+    gap: 1.5rem;
   }
-
   .nav-links a {
     font-size: 2.5rem;
     text-align: center;
   }
-
   .nav-links a i {
-    display: inline-block; /* Show icons */
+    display: inline-block;
     font-size: 1.5rem;
   }
-
   .nav-links a span {
-    display: none; /* Hide words */
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
-  .nav-links a {
-    font-size: 2rem;
-  }
-}
-
-.logo-text {
-  font-family: 'Amatic SC', cursive;
-  font-size: 2.5rem; /* Big on desktop */
-  font-weight: bold;
-  color: #f7e8d5;
-  text-decoration: none;
-  white-space: nowrap; /* 👈 Prevent accidental breaking */
-}
-
-.logo-text:hover {
-  color: #FF886B;
-}
-
-/* 📱 On small screens, shrink the logo */
-@media (max-width: 768px) {
-  .logo-text {
-    font-size: 1.8rem; /* 👈 Smaller size on tablet and phone */
-  }
-}
-
-@media (max-width: 480px) {
-  .logo-text {
-    font-size: 1.5rem; /* 👈 Even smaller on tiny phone screens */
-  }
-}
-
-
-
-/* 🖼️ Main Sections */
-main {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 120px;
-  padding-bottom: 80px;
-  text-align: center;
+  .nav-links a { font-size: 2rem; }
 }
 
 /* 🎠 Carousel */
@@ -296,9 +233,8 @@ main {
   max-width: 100vw;
   background-color: #fff;
   padding: 0;
-  display: block; /* keep it block */
+  display: block;
 }
-
 
 .carousel-wrapper {
   overflow-x: auto;
@@ -310,7 +246,6 @@ main {
   display: block;
   height: calc(100vh - var(--nav-height) - var(--footer-height));
 }
-
 
 .carousel-wrapper::-webkit-scrollbar {
   display: none;
@@ -324,10 +259,6 @@ main {
   min-width: 100%;
 }
 
-
-
-
-
 .carousel-track img {
   flex: 0 0 auto;
   height: 70vh;
@@ -340,10 +271,6 @@ main {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   scroll-snap-align: center;
 }
-
-
-
-
 
 /* 🎯 Carousel Buttons */
 .carousel-button {
@@ -371,8 +298,6 @@ main {
 }
 
 /* 🎠 Carousel Responsive Images */
-
-
 @media (max-width: 768px) {
   .carousel-track img {
     width: 90vw;
@@ -380,16 +305,36 @@ main {
   }
 }
 
-
-
-
-
 @media (max-width: 480px) {
   .carousel-track img {
     width: 250px;
-    height: 500px; /* 🆙 UPDATED taller height for phone */
+    height: 500px;
   }
 }
+
+/* 🖌️ Fade Overlays for Carousel */
+.fade-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.fade-overlay.left {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.fade-overlay.right {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+/* 📷 Gallery Section (unchanged) */
+/* (you can paste your gallery, shop, about, footer sections here — I didn't touch them because you said to keep them as is) */
+
 
 
 
