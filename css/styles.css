@@ -145,6 +145,7 @@ nav {
   align-items: center;
 }
 
+/* 🔔 Link styles */
 .nav-links a {
   display: flex;
   align-items: center;
@@ -155,40 +156,46 @@ nav {
   transition: color 0.2s;
 }
 
-.nav-links a i {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-}
-
 .nav-links a:hover {
   color: #FF886B;
 }
 
-/* 🔔 Responsive Navbar */
+/* 🖥️ Default (Big Screens) - Show words, hide icons */
+.nav-links a i {
+  display: none; /* Hide icons */
+}
+
+.nav-links a span {
+  display: inline; /* Show words */
+}
+
+/* 📱 Mobile (Small Screens) - Show icons, hide words */
 @media (max-width: 768px) {
+  .nav-links {
+    gap: 1.5rem; /* Optional: tighter spacing on mobile */
+  }
+
   .nav-links a {
     font-size: 2.5rem;
     text-align: center;
   }
 
-  .nav-links a span {
-    display: none;
+  .nav-links a i {
+    display: inline-block; /* Show icons */
+    font-size: 2rem;
   }
 
-  .nav-links a i {
-    display: inline-block;
-    font-size: 2rem;
+  .nav-links a span {
+    display: none; /* Hide words */
   }
 }
 
 @media (max-width: 480px) {
-  .nav-links {
-    gap: 1.5rem;
-  }
   .nav-links a {
     font-size: 2rem;
   }
 }
+
 
 /* 🖼️ Main Sections */
 main {
