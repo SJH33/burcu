@@ -319,15 +319,15 @@ main {
 
 .carousel-track img {
   flex: 0 0 auto;
-  width: 60vw; /* 60% of the screen width */
-  height: calc(100vh - var(--nav-height) - var(--footer-height)); /* 70% of the screen height */
-
+  width: 250px; /* small fixed width for each image */
+  height: 350px; /* reasonable height */
   object-fit: cover;
   border-radius: 20px;
   border: 5px solid #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   scroll-snap-align: start;
 }
+
 
 /* 🎯 Carousel Buttons */
 .carousel-button {
