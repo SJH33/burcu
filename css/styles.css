@@ -275,6 +275,21 @@ main {
   overflow-x: auto; /* 👈 Only the carousel scrolls */
 }
 
+@media (max-width: 768px) {
+  .carousel-track img {
+    width: 150px;    /* Smaller images on tablet */
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-track img {
+    width: 120px;    /* Even smaller images on phone */
+    height: 240px;
+  }
+}
+
+
 /* Gallery */
 .gallery-section {
   max-width: 1200px;
