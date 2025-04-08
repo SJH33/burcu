@@ -298,7 +298,7 @@ main {
   -webkit-overflow-scrolling: touch;
   padding: 0;
   background-color: #fff;
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -331,18 +331,20 @@ main {
 
 
 
+
 .carousel-track img {
   flex: 0 0 auto;
-  height: 70vh; /* 70% of screen height */
-  width: auto;  /* natural width */
-  max-width: 80vw; /* never overflow screen */
-  min-width: 300px; /* 👈 force a minimum width so it's not tiny */
-  object-fit: cover; /* crop if needed nicely */
+  height: 70vh;
+  width: auto;
+  min-width: 300px;
+  max-width: 80vw;
+  object-fit: cover;
   border-radius: 20px;
   border: 5px solid #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   scroll-snap-align: center;
 }
+
 
 
 
