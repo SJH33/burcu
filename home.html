@@ -66,49 +66,49 @@
   <script src="js/include.js"></script>
 
   <!-- 🛠 Carousel Scroll Controls -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const carouselWrapper = document.querySelector('.carousel-wrapper');
-      const carouselTrack = document.querySelector('.carousel-track');
-      const leftButton = document.querySelector('.carousel-button.left');
-      const rightButton = document.querySelector('.carousel-button.right');
+document.addEventListener('DOMContentLoaded', function () {
+  const carouselWrapper = document.querySelector('.carousel-wrapper');
+  const carouselTrack = document.querySelector('.carousel-track');
+  const leftButton = document.querySelector('.carousel-button.left');
+  const rightButton = document.querySelector('.carousel-button.right');
 
-      function startAutoScroll() {
-        return setInterval(() => {
-          carouselWrapper.scrollBy({ left: 1, behavior: 'auto' });
+  function startAutoScroll() {
+    carouselWrapper.style.scrollSnapType = 'none'; // Disable snap
+    return setInterval(() => {
+      carouselWrapper.scrollBy({ left: 2, behavior: 'auto' });
 
-          if (carouselWrapper.scrollLeft >= (carouselTrack.scrollWidth - carouselWrapper.clientWidth)) {
-            carouselWrapper.scrollLeft = 0; // Reset to beginning
-          }
-        }, 30);
+      if (carouselWrapper.scrollLeft >= (carouselTrack.scrollWidth - carouselWrapper.clientWidth)) {
+        carouselWrapper.scrollLeft = 0;
       }
+    }, 20);
+  }
 
-      let scrollInterval = startAutoScroll();
+  let scrollInterval = startAutoScroll();
 
-      function pauseScroll() {
-        clearInterval(scrollInterval);
-      }
+  function pauseScroll() {
+    clearInterval(scrollInterval);
+    carouselWrapper.style.scrollSnapType = 'x mandatory'; // Re-enable snap
+  }
 
-      function resumeScroll() {
-        scrollInterval = startAutoScroll();
-      }
+  function resumeScroll() {
+    scrollInterval = startAutoScroll();
+  }
 
-      leftButton.addEventListener('click', () => {
-        carouselWrapper.scrollBy({ left: -300, behavior: 'smooth' });
-      });
+  leftButton.addEventListener('click', () => {
+    carouselWrapper.scrollBy({ left: -300, behavior: 'smooth' });
+  });
 
-      rightButton.addEventListener('click', () => {
-        carouselWrapper.scrollBy({ left: 300, behavior: 'smooth' });
-      });
+  rightButton.addEventListener('click', () => {
+    carouselWrapper.scrollBy({ left: 300, behavior: 'smooth' });
+  });
 
-      carouselWrapper.addEventListener('mouseover', pauseScroll);
-      carouselWrapper.addEventListener('mouseout', resumeScroll);
-      leftButton.addEventListener('mouseover', pauseScroll);
-      leftButton.addEventListener('mouseout', resumeScroll);
-      rightButton.addEventListener('mouseover', pauseScroll);
-      rightButton.addEventListener('mouseout', resumeScroll);
-    });
-  </script>
+  carouselWrapper.addEventListener('mouseover', pauseScroll);
+  carouselWrapper.addEventListener('mouseout', resumeScroll);
+  leftButton.addEventListener('mouseover', pauseScroll);
+  leftButton.addEventListener('mouseout', resumeScroll);
+  rightButton.addEventListener('mouseover', pauseScroll);
+  rightButton.addEventListener('mouseout', resumeScroll);
+});
 
   <!-- 🛠 Lightbox Popup Controls -->
   <script>
