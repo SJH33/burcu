@@ -254,6 +254,7 @@ main {
 }
 
 
+/* 🎯 Carousel Buttons */
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -263,10 +264,27 @@ main {
   font-size: 2rem;
   border-radius: 50%;
   cursor: pointer;
+  padding: 0.5rem;
+  z-index: 10;
 }
 
 .carousel-button:hover {
   background: rgba(255, 255, 255, 1);
+}
+
+.carousel-button.left {
+  left: 10px; /* 👈 Position to the left */
+}
+
+.carousel-button.right {
+  right: 10px; /* 👉 Position to the right */
+}
+
+/* 🎯 Hide buttons on small screens (mobile) */
+@media (max-width: 768px) {
+  .carousel-button {
+    display: none;
+  }
 }
 
 .carousel-container {
