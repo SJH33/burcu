@@ -494,6 +494,40 @@ main {
     right: 2px;
   }
 }
+.close-lightbox {
+  position: absolute;
+  top: 20px; /* 👈 Distance from top */
+  right: 20px; /* 👈 Distance from right */
+  background: rgba(255,255,255,0.7);
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 20;
+}
+
+/* Hover effect */
+.close-lightbox:hover {
+  background: rgba(255,255,255,1);
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 768px) {
+  .close-lightbox {
+    top: 10px;    /* 👈 Bring it closer to top */
+    right: 10px;  /* 👈 Tighter to corner */
+    font-size: 1.8rem; /* 👈 Slightly smaller X */
+  }
+}
+
+@media (max-width: 480px) {
+  .close-lightbox {
+    top: 8px;
+    right: 8px;
+    font-size: 1.5rem;
+  }
+}
 
 
 /* 🙋 About Section */
