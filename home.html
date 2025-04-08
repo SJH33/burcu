@@ -84,29 +84,40 @@ document.addEventListener('DOMContentLoaded', function () {
   const rightButton = document.querySelector('.carousel-button.right');
 
   let scrollInterval;
+  const scrollSpeed = 1.5; // how fast to scroll
+  let cloneWidth = 0; // total width of cloned images
+
+  function calculateCloneWidth() {
+    const clones = carouselTrack.querySelectorAll('img[alt$="clone"]');
+    cloneWidth = 0;
+    clones.forEach(clone => {
+      cloneWidth += clone.offsetWidth + 32; // include gap (2rem = 32px)
+    });
+  }
 
   function startAutoScroll() {
-    carouselWrapper.style.scrollSnapType = 'none'; // Turn off snap
+    carouselWrapper.style.scrollSnapType = 'none'; // disable snap
     scrollInterval = setInterval(() => {
-      carouselWrapper.scrollLeft += 1.5; // Small smooth move
-      if (carouselWrapper.scrollLeft >= (carouselTrack.scrollWidth - carouselWrapper.clientWidth)) {
+      carouselWrapper.scrollLeft += scrollSpeed;
+
+      if (carouselWrapper.scrollLeft >= (carouselTrack.scrollWidth - carouselWrapper.clientWidth - cloneWidth)) {
+        // If we reach the cloned images, jump back
         carouselWrapper.scrollLeft = 0;
       }
-    }, 10); // Very smooth
+    }, 10);
   }
 
   function stopAutoScroll() {
     clearInterval(scrollInterval);
-    carouselWrapper.style.scrollSnapType = 'x mandatory'; // Turn snap back on
+    carouselWrapper.style.scrollSnapType = 'x mandatory'; // enable snap
   }
 
+  calculateCloneWidth();
   startAutoScroll();
 
-  // Pause auto-scroll on hover
   carouselWrapper.addEventListener('mouseenter', stopAutoScroll);
   carouselWrapper.addEventListener('mouseleave', startAutoScroll);
 
-  // Left and right buttons
   leftButton.addEventListener('click', () => {
     carouselWrapper.scrollBy({ left: -300, behavior: 'smooth' });
   });
@@ -115,7 +126,6 @@ document.addEventListener('DOMContentLoaded', function () {
     carouselWrapper.scrollBy({ left: 300, behavior: 'smooth' });
   });
 
-  // Pause scrolling when hovering buttons
   leftButton.addEventListener('mouseenter', stopAutoScroll);
   leftButton.addEventListener('mouseleave', startAutoScroll);
   rightButton.addEventListener('mouseenter', stopAutoScroll);
