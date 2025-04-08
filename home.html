@@ -1,30 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burcu's Art - Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
 <body>
   <div class="page-wrapper">
+
+    <!-- Header and Navbar -->
     <div data-include="partials/header.html"></div>
     <div data-include="partials/nav.html"></div>
 
-
-
-    
+    <!-- Main Content -->
     <main>
       <div class="carousel-container">
-        <div class="fade-overlay left"></div>    <!-- Left Fade -->
+
+        <!-- Left Fade -->
+        <div class="fade-overlay left"></div>
+
+        <!-- Left Button -->
         <button class="carousel-button left">&#10094;</button>
 
+        <!-- Carousel -->
         <div class="carousel-wrapper">
           <div class="carousel-track">
-            <img src="images/burcu_art1.jpg" alt="Art 1" />
-            <img src="images/burcu_art2.jpg" alt="Art 2" />
-            <img src="images/burcu_art3.jpg" alt="Art 3" />
-            <img src="images/burcu_art4.jpg" alt="Art 4" />
-            <img src="images/burcu_art5.jpg" alt="Art 5" />
-            <img src="images/burcu_art6.jpg" alt="Art 6" />
-            <img src="images/burcu_art7.jpg" alt="Art 7" />
-            <img src="images/burcu_art8.jpg" alt="Art 8" />
-            <img src="images/burcu_art9.jpg" alt="Art 9" />
-            <img src="images/burcu_art10.jpg" alt="Art 10" />
-        
-            <!-- Duplicate again -->
             <img src="images/burcu_art1.jpg" alt="Art 1" />
             <img src="images/burcu_art2.jpg" alt="Art 2" />
             <img src="images/burcu_art3.jpg" alt="Art 3" />
@@ -38,167 +40,136 @@
           </div>
         </div>
 
-
+        <!-- Right Button -->
         <button class="carousel-button right">&#10095;</button>
-        <div class="fade-overlay right"></div>   <!-- Right Fade -->
+
+        <!-- Right Fade -->
+        <div class="fade-overlay right"></div>
+
       </div>
 
-    <!-- Lightbox / Popup Overlay -->
-    <div class="lightbox" id="lightbox">
-      <span class="close-lightbox" id="closeLightbox">&times;</span>
-      <img class="lightbox-image" id="lightboxImage" src="" alt="Popup Image">
-      <button class="lightbox-button left" id="prevImage">&#10094;</button>
-      <button class="lightbox-button right" id="nextImage">&#10095;</button>
-    </div>
-
+      <!-- Lightbox / Popup Overlay -->
+      <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" id="closeLightbox">&times;</span>
+        <img class="lightbox-image" id="lightboxImage" src="" alt="Popup Image">
+        <button class="lightbox-button left" id="prevImage">&#10094;</button>
+        <button class="lightbox-button right" id="nextImage">&#10095;</button>
+      </div>
     </main>
-    
+
+    <!-- Footer -->
     <div data-include="partials/footer.html"></div>
+
   </div>
 
-  <!-- 🛠 Load partials -->
+  <!-- 🛠 Load Partials Script -->
   <script src="js/include.js"></script>
 
-  <!-- 🛠 Carousel control -->
+  <!-- 🛠 Carousel Scroll Controls -->
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const carouselWrapper = document.querySelector('.carousel-wrapper');
-    const carouselTrack = document.querySelector('.carousel-track');
-    const leftButton = document.querySelector('.carousel-button.left');
-    const rightButton = document.querySelector('.carousel-button.right');
+    document.addEventListener('DOMContentLoaded', function () {
+      const carouselWrapper = document.querySelector('.carousel-wrapper');
+      const carouselTrack = document.querySelector('.carousel-track');
+      const leftButton = document.querySelector('.carousel-button.left');
+      const rightButton = document.querySelector('.carousel-button.right');
 
-    function startAutoScroll() {
-      return setInterval(() => {
-        carouselWrapper.scrollBy({ left: 1, behavior: 'auto' });
+      function startAutoScroll() {
+        return setInterval(() => {
+          carouselWrapper.scrollBy({ left: 1, behavior: 'auto' });
 
-        // 🛠 Check if we reached the end
-        if (carouselWrapper.scrollLeft >= (carouselTrack.scrollWidth - carouselWrapper.clientWidth)) {
-          // Reset to beginning
-          carouselWrapper.scrollLeft = 0;
-        }
-      }, 30);
-    }
+          if (carouselWrapper.scrollLeft >= (carouselTrack.scrollWidth - carouselWrapper.clientWidth)) {
+            carouselWrapper.scrollLeft = 0; // Reset to beginning
+          }
+        }, 30);
+      }
 
-    let scrollInterval = startAutoScroll();
+      let scrollInterval = startAutoScroll();
 
-    function pauseScroll() {
-      clearInterval(scrollInterval);
-    }
+      function pauseScroll() {
+        clearInterval(scrollInterval);
+      }
 
-    function resumeScroll() {
-      scrollInterval = startAutoScroll();
-    }
+      function resumeScroll() {
+        scrollInterval = startAutoScroll();
+      }
 
-    leftButton.addEventListener('click', () => {
-      carouselWrapper.scrollBy({ left: -300, behavior: 'smooth' });
+      leftButton.addEventListener('click', () => {
+        carouselWrapper.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+
+      rightButton.addEventListener('click', () => {
+        carouselWrapper.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+
+      carouselWrapper.addEventListener('mouseover', pauseScroll);
+      carouselWrapper.addEventListener('mouseout', resumeScroll);
+      leftButton.addEventListener('mouseover', pauseScroll);
+      leftButton.addEventListener('mouseout', resumeScroll);
+      rightButton.addEventListener('mouseover', pauseScroll);
+      rightButton.addEventListener('mouseout', resumeScroll);
     });
+  </script>
 
-    rightButton.addEventListener('click', () => {
-      carouselWrapper.scrollBy({ left: 300, behavior: 'smooth' });
-    });
-
-    // Pause when hovering over the carousel
-    carouselWrapper.addEventListener('mouseover', pauseScroll);
-    carouselWrapper.addEventListener('mouseout', resumeScroll);
-
-    // Pause when hovering over buttons too
-    leftButton.addEventListener('mouseover', pauseScroll);
-    leftButton.addEventListener('mouseout', resumeScroll);
-
-    rightButton.addEventListener('mouseover', pauseScroll);
-    rightButton.addEventListener('mouseout', resumeScroll);
-  });
-</script>
-
+  <!-- 🛠 Lightbox Popup Controls -->
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const carouselImages = document.querySelectorAll('.carousel-track img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const closeLightbox = document.getElementById('closeLightbox');
-    const prevButton = document.getElementById('prevImage');
-    const nextButton = document.getElementById('nextImage');
+    document.addEventListener('DOMContentLoaded', function() {
+      const carouselImages = document.querySelectorAll('.carousel-track img');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightboxImage');
+      const closeLightbox = document.getElementById('closeLightbox');
+      const prevButton = document.getElementById('prevImage');
+      const nextButton = document.getElementById('nextImage');
 
-    let currentIndex = 0;
-    const imageSources = Array.from(carouselImages).map(img => img.src);
+      let currentIndex = 0;
+      const imageSources = Array.from(carouselImages).map(img => img.src);
 
-    // Open lightbox
-    carouselImages.forEach((img, index) => {
-      img.addEventListener('click', () => {
-        currentIndex = index;
+      function showImage(index) {
+        lightboxImage.src = imageSources[index];
+      }
+
+      carouselImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+          currentIndex = index;
+          showImage(currentIndex);
+          lightbox.style.display = 'flex';
+        });
+      });
+
+      closeLightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+      });
+
+      prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
         showImage(currentIndex);
-        lightbox.style.display = 'flex';
+      });
+
+      nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % imageSources.length;
+        showImage(currentIndex);
+      });
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.style.display = 'none';
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+          if (e.key === 'ArrowLeft') {
+            currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+            showImage(currentIndex);
+          } else if (e.key === 'ArrowRight') {
+            currentIndex = (currentIndex + 1) % imageSources.length;
+            showImage(currentIndex);
+          } else if (e.key === 'Escape') {
+            lightbox.style.display = 'none';
+          }
+        }
       });
     });
-
-    // Show image in lightbox
-    function showImage(index) {
-      lightboxImage.src = imageSources[index];
-    }
-
-    // Close lightbox
-    closeLightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
-
-    // Previous image
-    prevButton.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
-      showImage(currentIndex);
-    });
-
-    // Next image
-    nextButton.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % imageSources.length;
-      showImage(currentIndex);
-    });
-
-    // Optional: Close lightbox by clicking outside the image
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
-  });
-    // Allow keyboard navigation
-document.addEventListener('keydown', (e) => {
-  if (lightbox.style.display === 'flex') {
-    if (e.key === 'ArrowLeft') {
-      // Left arrow key pressed
-      currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
-      showImage(currentIndex);
-    } else if (e.key === 'ArrowRight') {
-      // Right arrow key pressed
-      currentIndex = (currentIndex + 1) % imageSources.length;
-      showImage(currentIndex);
-    } else if (e.key === 'Escape') {
-      // Escape key to close
-      lightbox.style.display = 'none';
-    }
-  }
-});
-</script>
-<script>
-  const track = document.querySelector('.carousel-wrapper');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-
-  prevBtn.addEventListener('click', () => {
-    track.scrollBy({
-      left: -300,   // Scroll left by 300px
-      behavior: 'smooth'
-    });
-  });
-
-  nextBtn.addEventListener('click', () => {
-    track.scrollBy({
-      left: 300,    // Scroll right by 300px
-      behavior: 'smooth'
-    });
-  });
-</script>
-
-
-
+  </script>
 
 </body>
+</html>
