@@ -236,15 +236,15 @@ main {
 
 .carousel-track {
   display: flex;
-  width: max-content;
+  flex-wrap: nowrap;  /* ✅ No wrapping */
+  gap: 1.5rem;
 }
 
 .carousel-track img {
-  width: 200px;
+  flex: 0 0 auto;      /* ✅ Prevent images from shrinking */
+  width: 200px;        /* Default size */
   height: 400px;
   object-fit: cover;
-  max-width: 100%;
-  margin-right: 2rem;
   border-radius: 20px;
   border: 5px solid #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
