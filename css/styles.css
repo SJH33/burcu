@@ -317,7 +317,7 @@ main {
   gap: 1.5rem;
 }
 
-.carousel-track img 
+.carousel-track img {
   flex: 0 0 auto;
   width: 60vw; /* 60% of the screen width */
   height: calc(100vh - var(--nav-height) - var(--footer-height)); /* 70% of the screen height */
@@ -355,13 +355,14 @@ main {
 }
 
 /* 🎠 Carousel Responsive Images */
+
+
 @media (max-width: 768px) {
   .carousel-track img {
-    width: 250px;
-    height: 500px; /* 🆙 UPDATED taller height for tablet/mobile */
+    width: 90vw;
+    height: calc(100vh - var(--nav-height) - var(--footer-height));
   }
 }
-
 
 
 
