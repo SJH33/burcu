@@ -2,9 +2,13 @@
 🎨 BURCU ARTIST WEBSITE - FULL CSS
 =============================== */
 
-/* ----------------------------
-🌐 1. Base Reset + Global Styles
----------------------------- */
+/* 🌐 Base Reset + Global Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html, body {
   overflow-x: hidden;
   margin: 0;
@@ -20,9 +24,7 @@ html, body {
   font-size: 1.1rem;
 }
 
-/* ----------------------------
-🎨 2. Landing Page
----------------------------- */
+/* 🎨 Landing Page */
 body.landing-page {
   background-color: #42745B;
 }
@@ -56,9 +58,7 @@ body.landing-page {
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-/* ----------------------------
-🗨️ 3. Speech Bubble
----------------------------- */
+/* 🗨️ Speech Bubble */
 .speech-bubble-link {
   position: absolute;
   top: 5%;
@@ -79,26 +79,16 @@ body.landing-page {
   transform: scale(1.1);
 }
 
-/* ----------------------------
-🌸 4. Decorative Flowers
----------------------------- */
+/* 🌸 Decorative Flowers */
 .flower {
   position: absolute;
   width: 300px;
   pointer-events: none;
 }
 
-.top-left {
-  top: 20px;
-  left: 20px;
-}
+.top-left { top: 20px; left: 20px; }
+.bottom-right { bottom: 20px; right: 20px; }
 
-.bottom-right {
-  bottom: 20px;
-  right: 20px;
-}
-
-/* Responsive Flower Sizes */
 @media (max-width: 768px) {
   .flower { width: 200px; }
 }
@@ -126,7 +116,7 @@ nav {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Key: logo left, menu right */
+  justify-content: space-between;
 }
 
 .logo-text {
@@ -143,13 +133,12 @@ nav {
 
 .nav-links {
   list-style: none;
-  display: flex;       /* ✅ Make the list horizontal */
-  align-items: center; /* ✅ Center items vertically */
-  gap: 2rem;           /* ✅ Space between menu items */
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   padding: 0;
   margin: 0;
 }
-
 
 .nav-links li {
   display: flex;
@@ -168,14 +157,14 @@ nav {
 
 .nav-links a i {
   font-size: 2rem;
-  margin-right: 0.5rem; /* Space between icon and text */
+  margin-right: 0.5rem;
 }
 
 .nav-links a:hover {
   color: #FF886B;
 }
 
-/* 🔔 Responsive - On Mobile: hide text, keep icons */
+/* 🔔 Responsive Navbar */
 @media (max-width: 768px) {
   .nav-links a {
     font-size: 2.5rem;
@@ -183,11 +172,11 @@ nav {
   }
 
   .nav-links a span {
-    display: none; /* 👈 HIDE the words on mobile */
+    display: none;
   }
 
   .nav-links a i {
-    display: inline-block; /* Always show icons */
+    display: inline-block;
     font-size: 2rem;
   }
 }
@@ -201,9 +190,7 @@ nav {
   }
 }
 
-/* ----------------------------
-🖼️ 6. Main Sections
----------------------------- */
+/* 🖼️ Main Sections */
 main {
   flex: 1;
   display: flex;
@@ -214,13 +201,13 @@ main {
   text-align: center;
 }
 
-/* Carousel */
+/* 🎠 Carousel */
 .carousel-container {
-  position: relative; /* Needed for absolute buttons */
-  width: 100%;        /* ✅ Full width */
-  max-width: 100vw;   /* ✅ Never bigger than screen */
-  overflow-x: hidden; /* ✅ Cut anything outside */
-  -webkit-overflow-scrolling: touch; /* ✅ Smooth scrolling on iOS */
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   padding: 2rem 0;
   background-color: #fff;
   scroll-snap-type: x mandatory;
@@ -228,25 +215,25 @@ main {
 
 .carousel-wrapper {
   display: flex;
-  gap: 1.5rem;             /* ✅ Add some space between images */
-  width: 100%;             /* ✅ Full width on mobile */
-  overflow-x: auto;        /* ✅ Make the inside scrollable */
-  scrollbar-width: none;   /* ✅ Hide scrollbar on Firefox */
+  gap: 1.5rem;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
 .carousel-wrapper::-webkit-scrollbar {
-  display: none; /* ✅ Hide scrollbar on Chrome/Safari */
+  display: none;
 }
 
 .carousel-track {
   display: flex;
-  flex-wrap: nowrap;  /* ✅ No wrapping */
+  flex-wrap: nowrap;
   gap: 1.5rem;
 }
 
 .carousel-track img {
-  flex: 0 0 auto;      /* ✅ Prevent images from shrinking */
-  width: 200px;        /* Default size */
+  flex: 0 0 auto;
+  width: 200px;
   height: 400px;
   object-fit: cover;
   border-radius: 20px;
@@ -254,7 +241,6 @@ main {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   scroll-snap-align: start;
 }
-
 
 /* 🎯 Carousel Buttons */
 .carousel-button {
@@ -274,45 +260,29 @@ main {
   background: rgba(255, 255, 255, 1);
 }
 
-.carousel-button.left {
-  left: 10px; /* 👈 Position to the left */
-}
+.carousel-button.left { left: 10px; }
+.carousel-button.right { right: 10px; }
 
-.carousel-button.right {
-  right: 10px; /* 👉 Position to the right */
-}
-
-/* 🎯 Hide buttons on small screens (mobile) */
 @media (max-width: 768px) {
-  .carousel-button {
-    display: none;
-  }
+  .carousel-button { display: none; }
 }
 
-.carousel-container {
-  overflow: hidden; /* 👈 Cut off anything wider than screen */
-}
-
-.carousel-wrapper {
-  overflow-x: auto; /* 👈 Only the carousel scrolls */
-}
-
+/* 🎠 Carousel Responsive Images */
 @media (max-width: 768px) {
   .carousel-track img {
-    width: 150px;    /* Smaller images on tablet */
+    width: 150px;
     height: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .carousel-track img {
-    width: 120px;    /* Even smaller images on phone */
+    width: 120px;
     height: 240px;
   }
 }
 
-
-/* Gallery */
+/* 🖼️ Gallery */
 .gallery-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -364,9 +334,7 @@ main {
   transition: transform 0.3s;
 }
 
-.art-piece:hover {
-  transform: scale(1.03);
-}
+.art-piece:hover { transform: scale(1.03); }
 
 .art-piece img {
   width: 100%;
@@ -389,7 +357,7 @@ main {
   opacity: 1;
 }
 
-/* Lightbox */
+/* 💡 Lightbox */
 .lightbox {
   display: none;
   position: fixed;
@@ -415,7 +383,7 @@ main {
   cursor: pointer;
 }
 
-/* About Section */
+/* 🙋 About Section */
 .about-section {
   display: flex;
   flex-direction: column;
@@ -444,7 +412,7 @@ main {
   margin-bottom: 20px;
 }
 
-/* Shop Section */
+/* 🛍️ Shop Section */
 .shop-section {
   max-width: 1200px;
   margin: 40px auto;
@@ -497,9 +465,7 @@ main {
   color: #333;
 }
 
-/* ----------------------------
-🦶 7. Footer
----------------------------- */
+/* 🦶 Footer */
 footer {
   background-color: #7BA392;
   padding: 1rem 2rem;
@@ -549,7 +515,6 @@ footer p {
   opacity: 0.7;
 }
 
-/* Responsive Footer */
 @media (max-width: 600px) {
   .footer-container {
     flex-direction: column;
