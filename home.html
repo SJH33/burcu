@@ -38,16 +38,9 @@
             <img src="images/burcu_art9.jpg" alt="Art 9" />
             <img src="images/burcu_art10.jpg" alt="Art 10" />
 
-            <img src="images/burcu_art1.jpg" alt="Art 1" />
-            <img src="images/burcu_art2.jpg" alt="Art 2" />
-            <img src="images/burcu_art3.jpg" alt="Art 3" />
-            <img src="images/burcu_art4.jpg" alt="Art 4" />
-            <img src="images/burcu_art5.jpg" alt="Art 5" />
-            <img src="images/burcu_art6.jpg" alt="Art 6" />
-            <img src="images/burcu_art7.jpg" alt="Art 7" />
-            <img src="images/burcu_art8.jpg" alt="Art 8" />
-            <img src="images/burcu_art9.jpg" alt="Art 9" />
-            <img src="images/burcu_art10.jpg" alt="Art 10" />
+            <img src="images/burcu_art1.jpg" alt="Art 1 clone" />
+            <img src="images/burcu_art2.jpg" alt="Art 2 clone" />
+            <img src="images/burcu_art3.jpg" alt="Art 3 clone" />
           </div>
         </div>
 
@@ -77,31 +70,31 @@
   <script src="js/include.js"></script>
 
   <!-- 🛠 Carousel Scroll Controls -->
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
   const carouselWrapper = document.querySelector('.carousel-wrapper');
   const carouselTrack = document.querySelector('.carousel-track');
   const leftButton = document.querySelector('.carousel-button.left');
   const rightButton = document.querySelector('.carousel-button.right');
 
   let scrollInterval;
-  const scrollSpeed = 1.5; // how fast to scroll
-  let cloneWidth = 0; // total width of cloned images
+  const scrollSpeed = 1.5; // How fast to scroll
+  let cloneWidth = 0; // Total width of cloned images
 
   function calculateCloneWidth() {
     const clones = carouselTrack.querySelectorAll('img[alt$="clone"]');
     cloneWidth = 0;
     clones.forEach(clone => {
-      cloneWidth += clone.offsetWidth + 32; // include gap (2rem = 32px)
+      cloneWidth += clone.offsetWidth + 32; // 32px gap (2rem)
     });
   }
 
   function startAutoScroll() {
-    carouselWrapper.style.scrollSnapType = 'none'; // disable snap
+    carouselWrapper.style.scrollSnapType = 'none'; // Turn off snap
     scrollInterval = setInterval(() => {
       carouselWrapper.scrollLeft += scrollSpeed;
 
       if (carouselWrapper.scrollLeft >= (carouselTrack.scrollWidth - carouselWrapper.clientWidth - cloneWidth)) {
-        // If we reach the cloned images, jump back
+        // Smooth reset without flicker
         carouselWrapper.scrollLeft = 0;
       }
     }, 10);
@@ -109,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function stopAutoScroll() {
     clearInterval(scrollInterval);
-    carouselWrapper.style.scrollSnapType = 'x mandatory'; // enable snap
+    carouselWrapper.style.scrollSnapType = 'x mandatory'; // Turn snap back on
   }
 
   calculateCloneWidth();
