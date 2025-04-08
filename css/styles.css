@@ -322,14 +322,16 @@ main {
 
 .carousel-track img {
   flex: 0 0 auto;
-  width: 250px; /* small fixed width for each image */
-  height: 350px; /* reasonable height */
-  object-fit: cover;
+  height: 70vh; /* 70% of the screen height */
+  width: auto; /* keep natural width */
+  max-width: 90vw; /* don't let it overflow screen */
+  object-fit: contain; /* show full image nicely */
   border-radius: 20px;
   border: 5px solid #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  scroll-snap-align: start;
+  scroll-snap-align: center; /* snap image into center view */
 }
+
 
 
 /* 🎯 Carousel Buttons */
