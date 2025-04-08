@@ -278,14 +278,13 @@ nav {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   scroll-snap-align: center;
 }
-
 .carousel-track img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+}
+.carousel-track img:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.carousel-track img:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* stronger glow, no jump */
-}
 
 }
 
