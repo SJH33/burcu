@@ -453,6 +453,41 @@ main {
   cursor: pointer;
 }
 
+
+.lightbox-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 10;
+}
+
+/* Left button */
+.lightbox-button.left {
+  left: 10px; /* ⬅️ Position left */
+}
+
+/* Right button */
+.lightbox-button.right {
+  right: 10px; /* ➡️ Position right */
+}
+
+/* On mobile: adjust button positions tighter */
+@media (max-width: 768px) {
+  .lightbox-button.left {
+    left: 5px; /* 📱 Pull closer to center */
+  }
+  .lightbox-button.right {
+    right: 5px; /* 📱 Pull closer to center */
+  }
+}
+
+
 /* 🙋 About Section */
 .about-section {
   display: flex;
