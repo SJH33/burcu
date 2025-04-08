@@ -297,17 +297,17 @@ main {
   flex-direction: column;
 }
 
-
-
 .carousel-wrapper {
   display: flex;
-  gap: 1.5rem;
-  width: 100%;
+  justify-content: center;
+  align-items: center; /* 👈 center vertically */
   overflow-x: auto;
   padding: 2rem 0;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none; /* Hide ugly scrollbar in Firefox */
+  scrollbar-width: none;
+  height: calc(100vh - var(--nav-height) - var(--footer-height)); /* 👈 full space between nav and footer */
 }
+
 
 .carousel-wrapper::-webkit-scrollbar {
   display: none; /* Hide scrollbar in Chrome/Safari */
