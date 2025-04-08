@@ -3,6 +3,13 @@
 =============================== */
 
 /* 🌐 Base Reset + Global Styles */
+
+:root {
+  --nav-height: 80px;
+  --footer-height: 60px;
+}
+
+
 *,
 *::before,
 *::after {
@@ -305,12 +312,10 @@ main {
   gap: 1.5rem;
 }
 
-.carousel-track img {
+.carousel-track img 
   flex: 0 0 auto;
- .carousel-track img {
   width: 60vw; /* 60% of the screen width */
-  height: 70vh; /* 70% of the screen height */
-}
+  height: calc(100vh - var(--nav-height) - var(--footer-height)); /* 70% of the screen height */
 
   object-fit: cover;
   border-radius: 20px;
