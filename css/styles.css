@@ -9,6 +9,13 @@
   --footer-height: 60px;
 }
 
+img {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+
 main {
   padding-top: 100px; /* Slightly more than navbar height */
   padding-bottom: 80px; /* Slightly more than footer height */
