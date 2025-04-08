@@ -17,9 +17,10 @@ img {
 
 
 main {
-  padding-top: 100px; /* Slightly more than navbar height */
-  padding-bottom: 80px; /* Slightly more than footer height */
+  padding-top: var(--nav-height); /* match navbar height */
+  padding-bottom: var(--footer-height); /* match footer height */
 }
+
 
 
 *,
