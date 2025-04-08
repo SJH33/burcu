@@ -299,7 +299,11 @@ nav {
     width: 90vw;
     height: calc(100vh - var(--nav-height) - var(--footer-height));
   }
+   .fade-overlay {
+    display: none;
+  }
 }
+
 
 @media (max-width: 480px) {
   .carousel-track img {
