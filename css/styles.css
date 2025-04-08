@@ -262,6 +262,14 @@ main {
   background: rgba(255, 255, 255, 1);
 }
 
+.carousel-container {
+  overflow: hidden; /* 👈 Cut off anything wider than screen */
+}
+
+.carousel-wrapper {
+  overflow-x: auto; /* 👈 Only the carousel scrolls */
+}
+
 /* Gallery */
 .gallery-section {
   max-width: 1200px;
