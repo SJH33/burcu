@@ -1,4 +1,28 @@
-/* 🎨 Landing Page */
+/* ============================
+🎨 BURCU ARTIST WEBSITE - FULL CSS
+=============================== */
+
+/* ----------------------------
+🌐 1. Base Reset + Global Styles
+---------------------------- */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #A8C3B3;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  font-size: 1.1rem;
+}
+
+/* ----------------------------
+🎨 2. Landing Page
+---------------------------- */
 body.landing-page {
   background-color: #42745B;
 }
@@ -9,10 +33,6 @@ body.landing-page {
   height: 100vh;
   overflow: hidden;
 }
-
-
-
-
 
 .image-container {
   position: relative;
@@ -36,10 +56,9 @@ body.landing-page {
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-
-
-
-/* 🗨️ Speech Bubble */
+/* ----------------------------
+🗨️ 3. Speech Bubble
+---------------------------- */
 .speech-bubble-link {
   position: absolute;
   top: 5%;
@@ -60,7 +79,9 @@ body.landing-page {
   transform: scale(1.1);
 }
 
-/* 🌸 Flowers */
+/* ----------------------------
+🌸 4. Decorative Flowers
+---------------------------- */
 .flower {
   position: absolute;
   width: 300px;
@@ -77,62 +98,20 @@ body.landing-page {
   right: 20px;
 }
 
+/* Responsive Flower Sizes */
 @media (max-width: 768px) {
-  .flower {
-    width: 200px;
-  }
+  .flower { width: 200px; }
 }
+
 @media (max-width: 480px) {
-  .flower {
-    width: 150px;
-  }
+  .flower { width: 150px; }
 }
 
-/* Landing Animations */
-@keyframes pulseGlow {
-  0% { filter: drop-shadow(0 0 20px rgba(255,255,255,0.6)); }
-  50% { filter: drop-shadow(0 0 35px rgba(255,255,255,0.9)); }
-  100% { filter: drop-shadow(0 0 20px rgba(255,255,255,0.6)); }
-}
-
-@keyframes fadeInBubble {
-  0% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-
-
-/* Base Reset */
-
-
-html, body {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Quicksand', sans-serif;
-  background-color: #A8C3B3; /* Softer green */
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  font-size: 1.1rem; /* Larger body text */
-}
-
-/* Navbar */
-
-
-
-/* Navbar */
+/* ----------------------------
+🧭 5. Navbar
+---------------------------- */
 nav {
-  background-color: rgba(123, 163, 146, 0.9); /* Semi-transparent nav */
+  background-color: rgba(123, 163, 146, 0.9);
   padding: 0.5rem 2rem;
   position: fixed;
   top: 0;
@@ -144,9 +123,33 @@ nav {
   align-items: center;
 }
 
+.nav-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 70px;
+}
+
+.logo-text {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f7e8d5;
+  text-decoration: none;
+}
+
+.logo-text:hover {
+  color: #FF886B;
+}
+
 .nav-links {
   list-style: none;
-  
   gap: 2rem;
 }
 
@@ -158,89 +161,51 @@ nav {
   transition: color 0.2s;
 }
 
-/* Make icons bigger */
 .nav-links a i {
   font-size: 3rem;
 }
 
 .nav-links a:hover {
-  color: #FF886B; /* Coral hover */
+  color: #FF886B;
 }
 
-/* Mobile layout adjustments */
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .nav-links {
-    display: flex; /* Ensure links are displayed */
-    justify-content: center; /* Center the items */
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 2rem;  /* Add some spacing between the icons */
+    gap: 2rem;
   }
-
   .nav-links a {
-    font-size: 2.5rem;  /* Increase the size of the icons */
-    text-align: center; /* Ensure text aligns properly */
+    font-size: 2.5rem;
+    text-align: center;
   }
-
-  /* Hide the text and only show icons on mobile */
   .nav-links a span {
-    display: none; /* Hide text on mobile */
+    display: none;
   }
-
   .nav-links a i {
-    display: inline-block; /* Ensure icons are visible */
+    display: inline-block;
   }
 }
 
 @media (max-width: 480px) {
-  .nav-links {
-    gap: 1.5rem; /* Reduce space between icons on very small screens */
-  }
-
-  .nav-links a {
-    font-size: 2rem;  /* Adjust icon size on small screens */
-  }
+  .nav-links { gap: 1.5rem; }
+  .nav-links a { font-size: 2rem; }
 }
 
-
-
-.nav-container {
-  width: 100%
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%; /* Ensure the navbar takes up the full width */
-  max-width: 1200px; /* Optional: Can limit max width for larger screens */
-  margin: 0 auto; /* Center the navbar if it's constrained by max-width */
-}
-
-.logo img {
-  height: 70px;
-}
-
-
-.social-links img {
-  width: 28px;
-  height: 28px;
-  transition: opacity 0.3s;
-}
-
-.social-links img:hover {
-  opacity: 0.7;
-}
-
-
-
-/* Main Sections */
+/* ----------------------------
+🖼️ 6. Main Sections
+---------------------------- */
 main {
   flex: 1;
   display: flex;
-  align-items: center;   /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  padding-top: 120px;    /* Space for navbar */
-  padding-bottom: 80px;  /* Space for footer */
-  text-align: center;    /* Center text */
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  text-align: center;
 }
-
 
 /* Carousel */
 .carousel-container {
@@ -256,7 +221,9 @@ main {
   scrollbar-width: none;
 }
 
-.carousel-wrapper::-webkit-scrollbar { display: none; }
+.carousel-wrapper::-webkit-scrollbar {
+  display: none;
+}
 
 .carousel-track {
   display: flex;
@@ -284,7 +251,9 @@ main {
   cursor: pointer;
 }
 
-.carousel-button:hover { background: rgba(255, 255, 255, 1); }
+.carousel-button:hover {
+  background: rgba(255, 255, 255, 1);
+}
 
 /* Gallery */
 .gallery-section {
@@ -313,11 +282,7 @@ main {
   transition: all 0.3s;
 }
 
-.gallery-filters button:hover {
-  background: #FF886B;
-  color: white;
-}
-
+.gallery-filters button:hover,
 .gallery-filters button.active {
   background: #FF886B;
   color: #fff;
@@ -327,9 +292,8 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
-  justify-items: center; /* Center the images */
+  justify-items: center;
 }
-
 
 .art-piece {
   position: relative;
@@ -338,7 +302,7 @@ main {
   border-radius: 20px;
   overflow: hidden;
   width: 200px;
-  height: 400px; /* Match carousel height */
+  height: 400px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s;
 }
@@ -350,10 +314,9 @@ main {
 .art-piece img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Important! */
-  border-radius: 16px; /* Smaller radius to fit inside the card */
+  object-fit: cover;
+  border-radius: 16px;
 }
-
 
 .hover-caption {
   background: rgba(255,255,255,0.8);
@@ -395,91 +358,10 @@ main {
   cursor: pointer;
 }
 
-/* Footer */
-
-
-footer {
-  background-color: #7BA392; /* Darker sage green */
-  padding: 1rem 2rem;
-  color: #fff;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column; /* Stack the contents vertically */
-  align-items: center; /* Center the content horizontally */
-  justify-content: center; /* Center content vertically if needed */
-}
-
-.footer-container {
-  display: flex;
-  flex-direction: column; /* Stack vertically */
-  justify-content: center;
-  align-items: center; /* Center all items */
-  max-width: 1200px; /* Optional: limit the width for larger screens */
-  margin: 0 auto; /* Center the container */
-  width: 100%; /* Ensure the container takes up full width */
-}
-
-footer p {
-  margin: 0;
-  font-size: 0.9rem;
-  text-align: center; /* Ensure text is centered */
-}
-
-.connect-with-me {
-  margin-bottom: 0;
-  font-size: 0.9rem;
-  display: block; /* Ensure it takes full width on mobile */
-  text-align: center;
-  margin-bottom: 1rem; /* Space between the "Connect with me" and copyright */
-}
-
-.social-media-icons {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.social-media-icons img {
-  width: 28px;
-  height: 28px;
-  transition: opacity 0.3s;
-}
-
-.social-media-icons img:hover {
-  opacity: 0.7;
-}
-
-/* For smaller screens, ensure everything stacks properly */
-@media (max-width: 600px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem; /* Add some space between sections */
-  }
-
-  .social-media-icons {
-    gap: 0.5rem; /* Adjust gap for smaller screens */
-  }
-
-  footer p {
-    font-size: 0.8rem; /* Adjust font size for small screens */
-  }
-}
-
-
-
-
-
-
 /* About Section */
 .about-section {
   display: flex;
-  flex-direction: column; /* Stack vertically */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
@@ -488,13 +370,11 @@ footer p {
   color: white;
 }
 
-
 .about-image img {
   max-width: 350px;
   width: 100%;
   border-radius: 12px;
 }
-
 
 .about-text h1 {
   font-family: 'Amatic SC', cursive;
@@ -528,11 +408,10 @@ footer p {
   transition: transform 0.3s, box-shadow 0.3s;
   width: 100%;
   max-width: 300px;
-  max-height: 80vh; /* 👈 LIMIT based on screen height */
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
 }
-
 
 .shop-item:hover {
   transform: translateY(-5px);
@@ -555,22 +434,17 @@ footer p {
   object-fit: cover;
 }
 
-
 .shop-item h3 {
   font-size: 1.1rem;
   padding: 1rem;
   color: #333;
 }
 
-
-/* Animations */
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
+/* ----------------------------
+🦶 7. Footer
+---------------------------- */
 footer {
-  background-color: #7BA392; /* Darker sage green */
+  background-color: #7BA392;
   padding: 1rem 2rem;
   color: #fff;
   position: fixed;
@@ -584,21 +458,22 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
 footer p {
   margin: 0;
   font-size: 0.9rem;
+  text-align: center;
 }
 
 .connect-with-me {
-  margin-bottom: 0;
+  margin: 0;
   font-size: 0.9rem;
-  margin-right: 0.5rem;
-  display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .social-media-icons {
@@ -617,45 +492,11 @@ footer p {
   opacity: 0.7;
 }
 
+/* Responsive Footer */
 @media (max-width: 600px) {
   .footer-container {
     flex-direction: column;
-    align-items: center;
     text-align: center;
-    gap: 0.5rem;
+    gap: 1rem;
   }
-}
-
-
-.logo-text {
-  font-family: 'Amatic SC', cursive;
-  font-size: 2.5rem; /* Make it nice and big */
-  font-weight: bold;
-  color: #f7e8d5; /* Light peachy color */
-  text-decoration: none; /* 🚫 Remove underline */
-}
-
-.logo-text:hover {
-  color: #FF886B; /* Coral pink on hover */
-}
-
-.social-links {
-  display: flex;
-  align-items: center; /* 👈 fixes vertical alignment */
-  gap: 1rem;
-}
-
-.connect-with-me {
-  margin: 0; /* reset default margin on <p> */
-  font-size: 0.9rem;
-}
-
-.social-media-icons {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.social-media-icons img {
-  width: 28px;
-  height: 28px;
 }
