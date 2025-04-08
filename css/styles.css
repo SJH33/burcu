@@ -294,27 +294,27 @@ main {
   position: relative;
   width: 100%;
   max-width: 100vw;
-  overflow-x: hidden;
+  /* no overflow-x: hidden! */
   -webkit-overflow-scrolling: touch;
   padding: 0;
   background-color: #fff;
-  scroll-snap-type: x mandatory;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
 .carousel-wrapper {
-  overflow-x: auto;   /* allow horizontal scroll */
-  overflow-y: hidden; /* no vertical scroll */
+  overflow-x: auto;
+  overflow-y: hidden;
   padding: 0;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  display: block; /* 👈 important: NOT flex here */
+  display: block;
   height: calc(100vh - var(--nav-height) - var(--footer-height));
 }
+
 
 .carousel-wrapper::-webkit-scrollbar {
   display: none;
@@ -325,8 +325,9 @@ main {
   flex-wrap: nowrap;
   align-items: center;
   gap: 2rem;
-  min-width: 100%; /* 👈 important for smooth scrolling */
+  min-width: 100%;
 }
+
 
 
 
