@@ -216,20 +216,22 @@ main {
 
 /* Carousel */
 .carousel-container {
-  position: relative;
-  overflow: hidden;
-  background-color: #fff;
+  overflow-x: auto;         /* ✅ Allow horizontal scroll (swipe) */
+  -webkit-overflow-scrolling: touch; /* ✅ Smooth scrolling on iOS */
   padding: 2rem 0;
+  background-color: #fff;
 }
 
 .carousel-wrapper {
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+  display: flex;
+  gap: 1.5rem;             /* ✅ Add some space between images */
+  width: 100%;             /* ✅ Full width on mobile */
+  overflow-x: auto;        /* ✅ Make the inside scrollable */
+  scrollbar-width: none;   /* ✅ Hide scrollbar on Firefox */
 }
 
 .carousel-wrapper::-webkit-scrollbar {
-  display: none;
+  display: none; /* ✅ Hide scrollbar on Chrome/Safari */
 }
 
 .carousel-track {
