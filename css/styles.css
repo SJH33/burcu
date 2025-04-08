@@ -343,7 +343,7 @@ main {
 
 @media (max-width: 480px) {
   .carousel-track img {
-    width: 220px;
+    width: 250px;
     height: 500px; /* 🆙 UPDATED taller height for phone */
   }
 }
