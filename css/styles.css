@@ -9,6 +9,11 @@
   --footer-height: 60px;
 }
 
+main {
+  padding-top: 100px; /* Slightly more than navbar height */
+  padding-bottom: 80px; /* Slightly more than footer height */
+}
+
 
 *,
 *::before,
