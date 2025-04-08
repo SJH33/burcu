@@ -171,6 +171,25 @@ document.addEventListener('keydown', (e) => {
   }
 });
 </script>
+<script>
+  const track = document.querySelector('.carousel-wrapper');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({
+      left: -300,   // Scroll left by 300px
+      behavior: 'smooth'
+    });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({
+      left: 300,    // Scroll right by 300px
+      behavior: 'smooth'
+    });
+  });
+</script>
 
 
 
