@@ -331,14 +331,19 @@ main {
 /* 🎠 Carousel Responsive Images */
 @media (max-width: 768px) {
   .carousel-track img {
-    width: 150px;
+    width: 250px;
     height: 500px; /* 🆙 UPDATED taller height for tablet/mobile */
   }
 }
 
+
+
+
+
+
 @media (max-width: 480px) {
   .carousel-track img {
-    width: 130px;
+    width: 220px;
     height: 500px; /* 🆙 UPDATED taller height for phone */
   }
 }
