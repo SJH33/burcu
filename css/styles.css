@@ -298,13 +298,13 @@ main {
 }
 
 .carousel-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: auto;
+  overflow-x: auto;   /* allow horizontal scroll */
+  overflow-y: hidden; /* no vertical scroll */
   padding: 2rem 0;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  display: block; /* 👈 important: NOT flex here */
   height: calc(100vh - var(--nav-height) - var(--footer-height));
 }
 
